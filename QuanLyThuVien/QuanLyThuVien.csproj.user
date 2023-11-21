@@ -7,5 +7,23 @@
     <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhieuMuonCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PhieuTraCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QuanLyMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QuanLySachChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ThemSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
