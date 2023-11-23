@@ -17,5 +17,6 @@ namespace DAL.Models
         public string DiaChi { get; set; }
         public DateTime NgaySinh { get; set; }
         public string SDT { get; set; }
+        public string Quyen { get; set; }
     }
 }

@@ -11,5 +11,9 @@ namespace DAL.Models
     {
         public int IDSach { get; set; }
         public int IDTacGia { get; set; }
+
+        // Relationship properties
+        public Sach Sach { get; set; }
+        public TacGia TacGia { get; set; }
     }
 }

@@ -1,0 +1,15 @@
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\bin\Debug\net6.0\BUS.deps.json
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\bin\Debug\net6.0\BUS.dll
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\bin\Debug\net6.0\BUS.pdb
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\bin\Debug\net6.0\DAL.dll
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\bin\Debug\net6.0\DAL.pdb
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.csproj.AssemblyReference.cache
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.GeneratedMSBuildEditorConfig.editorconfig
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.AssemblyInfoInputs.cache
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.AssemblyInfo.cs
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.csproj.CoreCompileInputs.cache
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.csproj.CopyComplete
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.dll
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\refint\BUS.dll
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\BUS.pdb
+E:\xi sap 3\QLTV\QuanLyThuVien\BUS\obj\Debug\net6.0\ref\BUS.dll

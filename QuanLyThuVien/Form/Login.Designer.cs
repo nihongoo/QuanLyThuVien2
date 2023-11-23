@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            UserName = new TextBox();
-            Pass = new TextBox();
+            txt_UserName = new TextBox();
+            txt_Pass = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            bt_Cancel = new Button();
+            bt_Login = new Button();
             SuspendLayout();
             // 
-            // UserName
+            // txt_UserName
             // 
-            UserName.Location = new Point(281, 199);
-            UserName.Name = "UserName";
-            UserName.Size = new Size(747, 47);
-            UserName.TabIndex = 0;
+            txt_UserName.Location = new Point(281, 199);
+            txt_UserName.Name = "txt_UserName";
+            txt_UserName.Size = new Size(747, 47);
+            txt_UserName.TabIndex = 0;
             // 
-            // Pass
+            // txt_Pass
             // 
-            Pass.Location = new Point(281, 338);
-            Pass.Name = "Pass";
-            Pass.Size = new Size(747, 47);
-            Pass.TabIndex = 0;
+            txt_Pass.Location = new Point(281, 338);
+            txt_Pass.Name = "txt_Pass";
+            txt_Pass.Size = new Size(747, 47);
+            txt_Pass.TabIndex = 1;
             // 
             // label1
             // 
@@ -73,42 +73,43 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(393, 38);
+            label3.Location = new Point(452, 54);
             label3.Name = "label3";
             label3.Size = new Size(172, 72);
             label3.TabIndex = 1;
             label3.Text = "Login";
             // 
-            // button1
+            // bt_Cancel
             // 
-            button1.Location = new Point(840, 499);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 58);
-            button1.TabIndex = 2;
-            button1.Text = "Thoát";
-            button1.UseVisualStyleBackColor = true;
+            bt_Cancel.Location = new Point(840, 499);
+            bt_Cancel.Name = "bt_Cancel";
+            bt_Cancel.Size = new Size(188, 58);
+            bt_Cancel.TabIndex = 3;
+            bt_Cancel.Text = "Thoát";
+            bt_Cancel.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // bt_Login
             // 
-            button2.Location = new Point(596, 499);
-            button2.Name = "button2";
-            button2.Size = new Size(188, 58);
-            button2.TabIndex = 2;
-            button2.Text = "Đăng nhập";
-            button2.UseVisualStyleBackColor = true;
+            bt_Login.Location = new Point(596, 499);
+            bt_Login.Name = "bt_Login";
+            bt_Login.Size = new Size(188, 58);
+            bt_Login.TabIndex = 0;
+            bt_Login.Text = "Đăng nhập";
+            bt_Login.UseVisualStyleBackColor = true;
+            bt_Login.Click += bt_Login_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 647);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(bt_Login);
+            Controls.Add(bt_Cancel);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(Pass);
-            Controls.Add(UserName);
+            Controls.Add(txt_Pass);
+            Controls.Add(txt_UserName);
             Name = "Login";
             Text = "Đăng nhập";
             ResumeLayout(false);
@@ -117,12 +118,12 @@
 
         #endregion
 
-        private TextBox UserName;
-        private TextBox Pass;
+        private TextBox txt_UserName;
+        private TextBox txt_Pass;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
-        private Button button2;
+        private Button bt_Cancel;
+        private Button bt_Login;
     }
 }
