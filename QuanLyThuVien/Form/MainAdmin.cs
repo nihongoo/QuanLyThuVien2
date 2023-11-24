@@ -15,7 +15,7 @@ namespace QuanLyThuVien
 {
     public partial class MainAdmin : Form
     {
-        private bool isClosing = false;
+        private bool isClosing = false;// kiểm tra xem đã gọi phương thức đóng chương trình chưa
         List<NguoiDung> _lst = new();
         UserSev _UserSev;
         string idCell;
@@ -27,18 +27,18 @@ namespace QuanLyThuVien
 
         private void MainAdmin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!isClosing)
+            if (!isClosing)//nếu chưa gọi phương thức đóng chương trình
             {
-                isClosing = true;
+                isClosing = true; // -> đã gọi
                 if (MessageBox.Show("Bạn có muốn thoát khỏi chương trình không ?", "FormClosing", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    e.Cancel = false;
+                    e.Cancel = false; // click ok
                     Application.Exit(); // Đóng toàn bộ ứng dụng
                 }
                 else
                 {
-                    e.Cancel = true;
-                    isClosing = false;
+                    e.Cancel = true;// click cancel
+                    isClosing = false;// trả về trạng thái chưa gọi phương thức
                 }
             }
 
