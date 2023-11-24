@@ -15,7 +15,7 @@ namespace DAL.Models
         public string Ten { get; set; }
         public string Email { get; set; }
         public string DiaChi { get; set; }
-        public DateTime NgaySinh { get; set; }
+        public DateTime? NgaySinh { get; set; }
         public string SDT { get; set; }
         public string Quyen { get; set; }
     }

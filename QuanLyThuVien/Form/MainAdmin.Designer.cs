@@ -30,8 +30,30 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataGridView5 = new DataGridView();
             panel11 = new Panel();
+            label31 = new Label();
+            comboBox2 = new ComboBox();
+            button24 = new Button();
+            button23 = new Button();
+            textBox30 = new TextBox();
+            button22 = new Button();
+            button21 = new Button();
+            button20 = new Button();
             panel10 = new Panel();
+            txtSdt = new TextBox();
+            cbxQuyen = new ComboBox();
+            txtMail = new TextBox();
+            label35 = new Label();
+            txtPass = new TextBox();
+            label34 = new Label();
+            txtDiaChi = new TextBox();
+            label36 = new Label();
+            txtUser = new TextBox();
+            label30 = new Label();
+            label33 = new Label();
+            txtTen = new TextBox();
+            label32 = new Label();
             label29 = new Label();
             label28 = new Label();
             panel9 = new Panel();
@@ -125,31 +147,10 @@
             textBox25 = new TextBox();
             textBox26 = new TextBox();
             tabPage6 = new TabPage();
-            button20 = new Button();
-            textBox27 = new TextBox();
-            textBox28 = new TextBox();
-            label30 = new Label();
-            textBox29 = new TextBox();
-            label32 = new Label();
-            label33 = new Label();
-            textBox31 = new TextBox();
-            label34 = new Label();
-            textBox32 = new TextBox();
-            label35 = new Label();
-            textBox33 = new TextBox();
-            textBox34 = new TextBox();
-            button21 = new Button();
-            button22 = new Button();
-            button23 = new Button();
-            textBox30 = new TextBox();
-            button24 = new Button();
-            comboBox2 = new ComboBox();
-            label31 = new Label();
-            label36 = new Label();
-            comboBox3 = new ComboBox();
-            dataGridView5 = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
             panel9.SuspendLayout();
@@ -169,7 +170,6 @@
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -200,6 +200,18 @@
             tabPage1.Text = "Quản lý người dùng";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridView5
+            // 
+            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Location = new Point(16, 748);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.RowHeadersWidth = 102;
+            dataGridView5.RowTemplate.Height = 49;
+            dataGridView5.Size = new Size(2315, 481);
+            dataGridView5.TabIndex = 3;
+            dataGridView5.CellClick += dataGridView5_CellClick;
+            dataGridView5.CellContentClick += dataGridView5_CellContentClick;
+            // 
             // panel11
             // 
             panel11.Controls.Add(label31);
@@ -215,21 +227,94 @@
             panel11.Size = new Size(658, 575);
             panel11.TabIndex = 2;
             // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(3, 367);
+            label31.Name = "label31";
+            label31.Size = new Size(300, 41);
+            label31.TabIndex = 3;
+            label31.Text = "Tìm người dùng theo";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(3, 425);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(652, 49);
+            comboBox2.TabIndex = 2;
+            comboBox2.Text = "Tên/Quyền";
+            // 
+            // button24
+            // 
+            button24.Location = new Point(481, 505);
+            button24.Name = "button24";
+            button24.Size = new Size(174, 58);
+            button24.TabIndex = 0;
+            button24.Text = "Tìm";
+            button24.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            button23.Location = new Point(3, 244);
+            button23.Name = "button23";
+            button23.Size = new Size(652, 58);
+            button23.TabIndex = 0;
+            button23.Text = "Đổi mật khẩu";
+            button23.UseVisualStyleBackColor = true;
+            // 
+            // textBox30
+            // 
+            textBox30.Location = new Point(3, 511);
+            textBox30.Name = "textBox30";
+            textBox30.Size = new Size(472, 47);
+            textBox30.TabIndex = 1;
+            // 
+            // button22
+            // 
+            button22.Location = new Point(3, 163);
+            button22.Name = "button22";
+            button22.Size = new Size(652, 58);
+            button22.TabIndex = 0;
+            button22.Text = "Xóa người dùng";
+            button22.UseVisualStyleBackColor = true;
+            button22.Click += button22_Click;
+            // 
+            // button21
+            // 
+            button21.Location = new Point(3, 89);
+            button21.Name = "button21";
+            button21.Size = new Size(652, 58);
+            button21.TabIndex = 0;
+            button21.Text = "Sửa thông tin người dùng";
+            button21.UseVisualStyleBackColor = true;
+            button21.Click += button21_Click;
+            // 
+            // button20
+            // 
+            button20.Location = new Point(3, 15);
+            button20.Name = "button20";
+            button20.Size = new Size(652, 58);
+            button20.TabIndex = 0;
+            button20.Text = "Thêm người dùng";
+            button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
+            // 
             // panel10
             // 
-            panel10.Controls.Add(textBox34);
-            panel10.Controls.Add(comboBox3);
-            panel10.Controls.Add(textBox33);
+            panel10.Controls.Add(dateTimePicker1);
+            panel10.Controls.Add(txtSdt);
+            panel10.Controls.Add(cbxQuyen);
+            panel10.Controls.Add(txtMail);
             panel10.Controls.Add(label35);
-            panel10.Controls.Add(textBox29);
-            panel10.Controls.Add(textBox32);
+            panel10.Controls.Add(txtPass);
             panel10.Controls.Add(label34);
-            panel10.Controls.Add(textBox28);
+            panel10.Controls.Add(txtDiaChi);
             panel10.Controls.Add(label36);
-            panel10.Controls.Add(textBox31);
+            panel10.Controls.Add(txtUser);
             panel10.Controls.Add(label30);
             panel10.Controls.Add(label33);
-            panel10.Controls.Add(textBox27);
+            panel10.Controls.Add(txtTen);
             panel10.Controls.Add(label32);
             panel10.Controls.Add(label29);
             panel10.Controls.Add(label28);
@@ -237,6 +322,111 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(1654, 575);
             panel10.TabIndex = 1;
+            // 
+            // txtSdt
+            // 
+            txtSdt.Location = new Point(1156, 321);
+            txtSdt.Name = "txtSdt";
+            txtSdt.Size = new Size(460, 47);
+            txtSdt.TabIndex = 1;
+            // 
+            // cbxQuyen
+            // 
+            cbxQuyen.FormattingEnabled = true;
+            cbxQuyen.Items.AddRange(new object[] { "admin", "bdh", "user" });
+            cbxQuyen.Location = new Point(1156, 456);
+            cbxQuyen.Name = "cbxQuyen";
+            cbxQuyen.Size = new Size(462, 49);
+            cbxQuyen.TabIndex = 2;
+            // 
+            // txtMail
+            // 
+            txtMail.Location = new Point(268, 445);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(575, 47);
+            txtMail.TabIndex = 1;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(925, 189);
+            label35.Name = "label35";
+            label35.Size = new Size(150, 41);
+            label35.TabIndex = 0;
+            label35.Text = "Ngày sinh";
+            // 
+            // txtPass
+            // 
+            txtPass.Location = new Point(268, 189);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(575, 47);
+            txtPass.TabIndex = 1;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(29, 451);
+            label34.Name = "label34";
+            label34.Size = new Size(88, 41);
+            label34.TabIndex = 0;
+            label34.Text = "Email";
+            // 
+            // txtDiaChi
+            // 
+            txtDiaChi.Location = new Point(1156, 55);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(460, 47);
+            txtDiaChi.TabIndex = 1;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(925, 447);
+            label36.Name = "label36";
+            label36.Size = new Size(106, 41);
+            label36.TabIndex = 0;
+            label36.Text = "Quyền";
+            // 
+            // txtUser
+            // 
+            txtUser.Location = new Point(268, 61);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(575, 47);
+            txtUser.TabIndex = 1;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(925, 317);
+            label30.Name = "label30";
+            label30.Size = new Size(193, 41);
+            label30.TabIndex = 0;
+            label30.Text = "Số điện thoại";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(29, 191);
+            label33.Name = "label33";
+            label33.Size = new Size(142, 41);
+            label33.TabIndex = 0;
+            label33.Text = "Mật khẩu";
+            // 
+            // txtTen
+            // 
+            txtTen.Location = new Point(268, 317);
+            txtTen.Name = "txtTen";
+            txtTen.Size = new Size(575, 47);
+            txtTen.TabIndex = 1;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(29, 61);
+            label32.Name = "label32";
+            label32.Size = new Size(143, 41);
+            label32.TabIndex = 0;
+            label32.Text = "Tài khoản";
             // 
             // label29
             // 
@@ -1098,196 +1288,13 @@
             tabPage6.Text = "Thống kê quá hạn";
             tabPage6.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // dateTimePicker1
             // 
-            button20.Location = new Point(3, 15);
-            button20.Name = "button20";
-            button20.Size = new Size(652, 58);
-            button20.TabIndex = 0;
-            button20.Text = "Thêm người dùng";
-            button20.UseVisualStyleBackColor = true;
-            // 
-            // textBox27
-            // 
-            textBox27.Location = new Point(268, 317);
-            textBox27.Name = "textBox27";
-            textBox27.Size = new Size(575, 47);
-            textBox27.TabIndex = 1;
-            // 
-            // textBox28
-            // 
-            textBox28.Location = new Point(1156, 55);
-            textBox28.Name = "textBox28";
-            textBox28.Size = new Size(460, 47);
-            textBox28.TabIndex = 1;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(925, 317);
-            label30.Name = "label30";
-            label30.Size = new Size(193, 41);
-            label30.TabIndex = 0;
-            label30.Text = "Số điện thoại";
-            // 
-            // textBox29
-            // 
-            textBox29.Location = new Point(1156, 188);
-            textBox29.Name = "textBox29";
-            textBox29.Size = new Size(460, 47);
-            textBox29.TabIndex = 1;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Location = new Point(29, 61);
-            label32.Name = "label32";
-            label32.Size = new Size(143, 41);
-            label32.TabIndex = 0;
-            label32.Text = "Tài khoản";
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Location = new Point(29, 191);
-            label33.Name = "label33";
-            label33.Size = new Size(142, 41);
-            label33.TabIndex = 0;
-            label33.Text = "Mật khẩu";
-            // 
-            // textBox31
-            // 
-            textBox31.Location = new Point(268, 61);
-            textBox31.Name = "textBox31";
-            textBox31.Size = new Size(575, 47);
-            textBox31.TabIndex = 1;
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Location = new Point(29, 451);
-            label34.Name = "label34";
-            label34.Size = new Size(88, 41);
-            label34.TabIndex = 0;
-            label34.Text = "Email";
-            // 
-            // textBox32
-            // 
-            textBox32.Location = new Point(268, 189);
-            textBox32.Name = "textBox32";
-            textBox32.Size = new Size(575, 47);
-            textBox32.TabIndex = 1;
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Location = new Point(925, 189);
-            label35.Name = "label35";
-            label35.Size = new Size(150, 41);
-            label35.TabIndex = 0;
-            label35.Text = "Ngày sinh";
-            // 
-            // textBox33
-            // 
-            textBox33.Location = new Point(268, 445);
-            textBox33.Name = "textBox33";
-            textBox33.Size = new Size(575, 47);
-            textBox33.TabIndex = 1;
-            // 
-            // textBox34
-            // 
-            textBox34.Location = new Point(1156, 321);
-            textBox34.Name = "textBox34";
-            textBox34.Size = new Size(460, 47);
-            textBox34.TabIndex = 1;
-            // 
-            // button21
-            // 
-            button21.Location = new Point(3, 89);
-            button21.Name = "button21";
-            button21.Size = new Size(652, 58);
-            button21.TabIndex = 0;
-            button21.Text = "Sửa thông tin người dùng";
-            button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            button22.Location = new Point(3, 163);
-            button22.Name = "button22";
-            button22.Size = new Size(652, 58);
-            button22.TabIndex = 0;
-            button22.Text = "Xóa người dùng";
-            button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            button23.Location = new Point(3, 244);
-            button23.Name = "button23";
-            button23.Size = new Size(652, 58);
-            button23.TabIndex = 0;
-            button23.Text = "Đổi mật khẩu";
-            button23.UseVisualStyleBackColor = true;
-            // 
-            // textBox30
-            // 
-            textBox30.Location = new Point(3, 511);
-            textBox30.Name = "textBox30";
-            textBox30.Size = new Size(472, 47);
-            textBox30.TabIndex = 1;
-            // 
-            // button24
-            // 
-            button24.Location = new Point(481, 505);
-            button24.Name = "button24";
-            button24.Size = new Size(174, 58);
-            button24.TabIndex = 0;
-            button24.Text = "Tìm";
-            button24.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(3, 425);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(652, 49);
-            comboBox2.TabIndex = 2;
-            comboBox2.Text = "Tên/Quyền";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Location = new Point(3, 367);
-            label31.Name = "label31";
-            label31.Size = new Size(300, 41);
-            label31.TabIndex = 3;
-            label31.Text = "Tìm người dùng theo";
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Location = new Point(925, 447);
-            label36.Name = "label36";
-            label36.Size = new Size(106, 41);
-            label36.TabIndex = 0;
-            label36.Text = "Quyền";
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(1156, 456);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(462, 49);
-            comboBox3.TabIndex = 2;
-            // 
-            // dataGridView5
-            // 
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(16, 748);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersWidth = 102;
-            dataGridView5.RowTemplate.Height = 49;
-            dataGridView5.Size = new Size(2315, 481);
-            dataGridView5.TabIndex = 3;
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(1149, 190);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(467, 47);
+            dateTimePicker1.TabIndex = 3;
             // 
             // MainAdmin
             // 
@@ -1297,8 +1304,11 @@
             Controls.Add(tabControl1);
             Name = "MainAdmin";
             Text = "Main";
+            FormClosing += MainAdmin_FormClosing;
+            Load += MainAdmin_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel10.ResumeLayout(false);
@@ -1327,7 +1337,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ResumeLayout(false);
         }
 
@@ -1439,19 +1448,19 @@
         private Button button22;
         private Button button21;
         private Button button20;
-        private TextBox textBox34;
-        private ComboBox comboBox3;
-        private TextBox textBox33;
+        private TextBox txtSdt;
+        private ComboBox cbxQuyen;
+        private TextBox txtMail;
         private Label label35;
-        private TextBox textBox29;
-        private TextBox textBox32;
+        private TextBox txtPass;
         private Label label34;
-        private TextBox textBox28;
+        private TextBox txtDiaChi;
         private Label label36;
-        private TextBox textBox31;
+        private TextBox txtUser;
         private Label label30;
         private Label label33;
-        private TextBox textBox27;
+        private TextBox txtTen;
         private Label label32;
+        private DateTimePicker dateTimePicker1;
     }
 }
