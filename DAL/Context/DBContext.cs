@@ -18,20 +18,19 @@ namespace DAL.Context
             : base(options)
         {
         }
-        public virtual DbSet<BDH> BDHs { get; set; }
-        public virtual DbSet<DocGia> DocGias { get; set; }
+        public virtual DbSet<BDH> BDH { get; set; }
+        public virtual DbSet<DocGia> DocGia { get; set; }
         public virtual DbSet<NgonNgu> NgonNgu { get; set; }
         public virtual DbSet<NguoiDung> NguoiDung { get; set; }
-        public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<NXB> NXBs { get; set; }
-        public virtual DbSet<PhieuMuon> PhieuMuons { get; set; }
-        public virtual DbSet<PhieuMuonCT> PhieuMuonCTs { get; set; }
-        public virtual DbSet<PhieuTra> PhieuTras { get; set; }
-        public virtual DbSet<PhieuTraCT> PhieuTraCTs { get; set; }
+        public virtual DbSet<NhanVien> NhanVien { get; set; }
+        public virtual DbSet<NXB> NXB { get; set; }
+        public virtual DbSet<PhieuMuon> PhieuMuon { get; set; }
+        public virtual DbSet<PhieuMuonCT> PhieuMuonCT { get; set; }
+        public virtual DbSet<PhieuTra> PhieuTra { get; set; }
+        public virtual DbSet<PhieuTraCT> PhieuTraCT { get; set; }
         public virtual DbSet<Sach> Sach { get; set; }
-        public virtual DbSet<SachCT> SachCTs { get; set; }
+        public virtual DbSet<SachCT> SachCT { get; set; }
         public virtual DbSet<TacGia> TacGia { get; set; }
-        public virtual DbSet<TacGiaCT> TacGiaCT { get; set; }
         public virtual DbSet<TheLoaiSach> TheLoaiSach { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -40,10 +39,6 @@ namespace DAL.Context
         internal void waite()
         {
             throw new NotImplementedException();
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<TacGiaCT>().HasNoKey();
         }
     }
 }

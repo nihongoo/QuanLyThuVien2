@@ -13,6 +13,7 @@ namespace DAL.Models
         [Key] public int IDSach { get; set; }
         public string TenSach { get; set; }
         public int IDTheLoai { get; set; }
+        public int IDTacGia { get; set; }
         public int IDNgonNgu { get; set; }
         public string HangSach { get; set; }
 

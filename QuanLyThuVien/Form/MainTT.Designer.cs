@@ -30,27 +30,26 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
-            panel1 = new Panel();
-            dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            dgvMainTT = new DataGridView();
+            panel1 = new Panel();
+            label6 = new Label();
+            label3 = new Label();
+            label5 = new Label();
+            label2 = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            textBox6 = new TextBox();
+            textBox3 = new TextBox();
+            textBox5 = new TextBox();
+            textBox2 = new TextBox();
+            textBox4 = new TextBox();
+            textBox1 = new TextBox();
+            tabPage2 = new TabPage();
             panel3 = new Panel();
             button5 = new Button();
             button6 = new Button();
@@ -70,12 +69,13 @@
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
+            tabPage3 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMainTT).BeginInit();
+            panel1.SuspendLayout();
+            tabPage2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel4.SuspendLayout();
@@ -95,7 +95,7 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(dgvMainTT);
             tabPage1.Controls.Add(panel1);
             tabPage1.Location = new Point(10, 58);
             tabPage1.Name = "tabPage1";
@@ -105,27 +105,62 @@
             tabPage1.Text = "Quản lý phiếu mượn";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // panel2
             // 
-            tabPage2.Controls.Add(panel3);
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(panel4);
-            tabPage2.Location = new Point(10, 58);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(2358, 1235);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Quản lý phiếu trả";
-            tabPage2.UseVisualStyleBackColor = true;
+            panel2.Controls.Add(button4);
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(button1);
+            panel2.Location = new Point(1722, 17);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(628, 366);
+            panel2.TabIndex = 2;
             // 
-            // tabPage3
+            // button4
             // 
-            tabPage3.Location = new Point(10, 58);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(2358, 1235);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Thống kê quá hạn";
-            tabPage3.UseVisualStyleBackColor = true;
+            button4.Location = new Point(3, 269);
+            button4.Name = "button4";
+            button4.Size = new Size(622, 58);
+            button4.TabIndex = 0;
+            button4.Text = "Quản lý phiếu mượn chi tiết";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(0, 187);
+            button3.Name = "button3";
+            button3.Size = new Size(622, 58);
+            button3.TabIndex = 0;
+            button3.Text = "Xóa phiếu mượn";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(0, 105);
+            button2.Name = "button2";
+            button2.Size = new Size(622, 58);
+            button2.TabIndex = 0;
+            button2.Text = "Sửa phiếu mượn";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(0, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(622, 58);
+            button1.TabIndex = 0;
+            button1.Text = "Thêm phiếu mượn";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // dgvMainTT
+            // 
+            dgvMainTT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMainTT.Location = new Point(8, 389);
+            dgvMainTT.Name = "dgvMainTT";
+            dgvMainTT.RowHeadersWidth = 102;
+            dgvMainTT.RowTemplate.Height = 49;
+            dgvMainTT.Size = new Size(2342, 833);
+            dgvMainTT.TabIndex = 1;
             // 
             // panel1
             // 
@@ -146,65 +181,14 @@
             panel1.Size = new Size(1689, 366);
             panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // label6
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 389);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.RowTemplate.Height = 49;
-            dataGridView1.Size = new Size(2342, 833);
-            dataGridView1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Location = new Point(1722, 17);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(628, 366);
-            panel2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(242, 29);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(468, 47);
-            textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(217, 41);
-            label1.TabIndex = 1;
-            label1.Text = "ID phiếu mượn";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(242, 110);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(468, 47);
-            textBox2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 116);
-            label2.Name = "label2";
-            label2.Size = new Size(175, 41);
-            label2.TabIndex = 1;
-            label2.Text = "Ngày mượn";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(242, 191);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(468, 47);
-            textBox3.TabIndex = 0;
+            label6.AutoSize = true;
+            label6.Location = new Point(785, 110);
+            label6.Name = "label6";
+            label6.Size = new Size(119, 41);
+            label6.TabIndex = 1;
+            label6.Text = "Ghi chú";
             // 
             // label3
             // 
@@ -215,27 +199,23 @@
             label3.TabIndex = 1;
             label3.Text = "Ngày trả";
             // 
-            // textBox4
+            // label5
             // 
-            textBox4.Location = new Point(242, 272);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(468, 47);
-            textBox4.TabIndex = 0;
+            label5.AutoSize = true;
+            label5.Location = new Point(785, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(183, 41);
+            label5.TabIndex = 1;
+            label5.Text = "ID nhân viên";
             // 
-            // textBox5
+            // label2
             // 
-            textBox5.Location = new Point(993, 29);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(648, 47);
-            textBox5.TabIndex = 0;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(993, 116);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(648, 212);
-            textBox6.TabIndex = 0;
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 116);
+            label2.Name = "label2";
+            label2.Size = new Size(175, 41);
+            label2.TabIndex = 1;
+            label2.Text = "Ngày mượn";
             // 
             // label4
             // 
@@ -246,59 +226,70 @@
             label4.TabIndex = 1;
             label4.Text = "ID độc giả";
             // 
-            // label5
+            // label1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(785, 29);
-            label5.Name = "label5";
-            label5.Size = new Size(183, 41);
-            label5.TabIndex = 1;
-            label5.Text = "ID nhân viên";
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(217, 41);
+            label1.TabIndex = 1;
+            label1.Text = "ID phiếu mượn";
             // 
-            // label6
+            // textBox6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(785, 110);
-            label6.Name = "label6";
-            label6.Size = new Size(119, 41);
-            label6.TabIndex = 1;
-            label6.Text = "Ghi chú";
+            textBox6.Location = new Point(993, 116);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(648, 212);
+            textBox6.TabIndex = 0;
             // 
-            // button1
+            // textBox3
             // 
-            button1.Location = new Point(0, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(622, 58);
-            button1.TabIndex = 0;
-            button1.Text = "Thêm phiếu mượn";
-            button1.UseVisualStyleBackColor = true;
+            textBox3.Location = new Point(242, 191);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(468, 47);
+            textBox3.TabIndex = 0;
             // 
-            // button2
+            // textBox5
             // 
-            button2.Location = new Point(0, 105);
-            button2.Name = "button2";
-            button2.Size = new Size(622, 58);
-            button2.TabIndex = 0;
-            button2.Text = "Sửa phiếu mượn";
-            button2.UseVisualStyleBackColor = true;
+            textBox5.Location = new Point(993, 29);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(648, 47);
+            textBox5.TabIndex = 0;
             // 
-            // button3
+            // textBox2
             // 
-            button3.Location = new Point(0, 187);
-            button3.Name = "button3";
-            button3.Size = new Size(622, 58);
-            button3.TabIndex = 0;
-            button3.Text = "Xóa phiếu mượn";
-            button3.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(242, 110);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(468, 47);
+            textBox2.TabIndex = 0;
             // 
-            // button4
+            // textBox4
             // 
-            button4.Location = new Point(3, 269);
-            button4.Name = "button4";
-            button4.Size = new Size(622, 58);
-            button4.TabIndex = 0;
-            button4.Text = "Quản lý phiếu mượn chi tiết";
-            button4.UseVisualStyleBackColor = true;
+            textBox4.Location = new Point(242, 272);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(468, 47);
+            textBox4.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(242, 29);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(468, 47);
+            textBox1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(panel3);
+            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(panel4);
+            tabPage2.Location = new Point(10, 58);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(2358, 1235);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Quản lý phiếu trả";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -473,6 +464,15 @@
             textBox12.Size = new Size(468, 47);
             textBox12.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            tabPage3.Location = new Point(10, 58);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(2358, 1235);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Thống kê quá hạn";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
             // MainTT
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -481,13 +481,15 @@
             Controls.Add(tabControl1);
             Name = "MainTT";
             Text = "Main";
+            FormClosing += MainTT_FormClosing;
+            Load += MainTT_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMainTT).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel2.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel4.ResumeLayout(false);
@@ -504,7 +506,7 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMainTT;
         private Panel panel1;
         private Label label6;
         private Label label3;

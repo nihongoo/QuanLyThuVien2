@@ -37,10 +37,8 @@ namespace DAL.Repositories
                         on sach.IDTheLoai equals TheLoai.IDTheLoai
                         join NgonNgu in _dBContext.NgonNgu
                         on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
-                        join tgCT in _dBContext.TacGiaCT
-                        on sach.IDSach equals tgCT.IDSach
                         join tacgia in _dBContext.TacGia
-                        on tgCT.IDTacGia equals tacgia.IDTacGia
+                        on sach.IDTacGia equals tacgia.IDTacGia
                         select new Sach
                         {
                             IDSach = sach.IDSach,
