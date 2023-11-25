@@ -37,15 +37,13 @@
             textBox6 = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
+            comboBox2 = new ComboBox();
             button1 = new Button();
             label5 = new Label();
             label4 = new Label();
             label2 = new Label();
             label6 = new Label();
             label3 = new Label();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
@@ -76,7 +74,9 @@
             textBox9 = new TextBox();
             textBox7 = new TextBox();
             dataGridView2 = new DataGridView();
-            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            comboBox5 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
@@ -168,6 +168,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(comboBox5);
+            panel1.Controls.Add(comboBox4);
+            panel1.Controls.Add(comboBox3);
             panel1.Controls.Add(comboBox2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
@@ -175,14 +178,20 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
             panel1.Location = new Point(38, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(1518, 396);
             panel1.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Thường", "VJp" });
+            comboBox2.Location = new Point(1065, 153);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(375, 49);
+            comboBox2.TabIndex = 4;
             // 
             // button1
             // 
@@ -237,27 +246,6 @@
             label3.Size = new Size(154, 41);
             label3.TabIndex = 2;
             label3.Text = "Ngôn ngữ";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(268, 281);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(375, 47);
-            textBox5.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(1065, 22);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(375, 47);
-            textBox3.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(268, 153);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(375, 47);
-            textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -537,14 +525,29 @@
             dataGridView2.Size = new Size(2353, 762);
             dataGridView2.TabIndex = 0;
             // 
-            // comboBox2
+            // comboBox3
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Thường", "VJp" });
-            comboBox2.Location = new Point(1065, 153);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(375, 49);
-            comboBox2.TabIndex = 4;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(268, 279);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(375, 49);
+            comboBox3.TabIndex = 5;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(268, 153);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(375, 49);
+            comboBox4.TabIndex = 5;
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(1065, 18);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(375, 49);
+            comboBox5.TabIndex = 5;
             // 
             // Main
             // 
@@ -555,6 +558,7 @@
             Name = "Main";
             Text = "Main";
             FormClosing += Main_FormClosing;
+            Load += Main_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -588,9 +592,6 @@
         private Label label2;
         private Label label6;
         private Label label3;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox2;
         private TextBox textBox1;
         private DataGridView dataGridView1;
         private TabPage tabPage2;
@@ -622,5 +623,8 @@
         private TextBox textBox9;
         private TextBox textBox7;
         private ComboBox comboBox2;
+        private ComboBox comboBox5;
+        private ComboBox comboBox4;
+        private ComboBox comboBox3;
     }
 }

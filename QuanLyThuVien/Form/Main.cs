@@ -44,20 +44,26 @@ namespace QuanLyThuVien
         private void LoadData()
         {
             dataGridView1.Rows.Clear();
-            dataGridView1.ColumnCount = 5;
+            dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].Name = "ID Sach";
             dataGridView1.Columns[1].Name = "Ten Sach";
             dataGridView1.Columns[2].Name = "The Loai";
             dataGridView1.Columns[3].Name = "Ngon Ngu";
             dataGridView1.Columns[4].Name = "Hang Sach";
+            dataGridView1.Columns[5].Name = "Tac Gia";
 
             _lst = _SachSev.GetAll();
 
             foreach (var item in _lst)
             {
                 int stt = _lst.IndexOf(item) + 1;
-                dataGridView1.Rows.Add(item.IDSach, item.TenSach, item.TenTheLoai, item.IDNgonNgu, item.HangSach);
+                dataGridView1.Rows.Add(item.IDSach, item.TenSach, item.TenTheLoai, item.TenNgonNgu, item.HangSach, item.TenTacGia);
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

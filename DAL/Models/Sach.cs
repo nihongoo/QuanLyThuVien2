@@ -16,8 +16,12 @@ namespace DAL.Models
         public int IDNgonNgu { get; set; }
         public string HangSach { get; set; }
 
-        [ForeignKey("IDTheLoai")]
-        public TheLoaiSach TenTheLoai { get; set; }
+        //[ForeignKey("IDTheLoai")]
+        public string? TenTheLoai { get; set; }
 
+        //[ForeignKey("IDNgonNgu")]
+        public string? TenNgonNgu { get; set; }
+        public string? TenTacGia { get; set; }
     }
 }
+

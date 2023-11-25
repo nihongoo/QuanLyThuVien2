@@ -1,6 +1,7 @@
 ﻿using DAL.Context;
 using DAL.IRepositories;
 using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,26 +19,47 @@ namespace DAL.Repositories
         }
         public Sach Create(Sach obj)
         {
-            _dBContext.Sachs.Add(obj);
+            _dBContext.Sach.Add(obj);
             _dBContext.SaveChanges();
             throw new NotImplementedException();
         }
 
         public Sach FindByID(int Id)
         {
-            return _dBContext.Sachs.FirstOrDefault(c => c.IDSach == Id);
+            return _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
             throw new NotImplementedException();
         }
 
         public List<Sach> GetAll()
         {
-            return _dBContext.Sachs.ToList();
+            var query = from sach in _dBContext.Sach
+                        join TheLoai in _dBContext.TheLoaiSach
+                        on sach.IDTheLoai equals TheLoai.IDTheLoai
+                        join NgonNgu in _dBContext.NgonNgu
+                        on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
+                        join tgCT in _dBContext.TacGiaCT
+                        on sach.IDSach equals tgCT.IDSach
+                        join tacgia in _dBContext.TacGia
+                        on tgCT.IDTacGia equals tacgia.IDTacGia
+                        select new Sach
+                        {
+                            IDSach = sach.IDSach,
+                            TenSach = sach.TenSach,
+                            IDTheLoai = sach.IDTheLoai,
+                            IDNgonNgu = sach.IDNgonNgu,
+                            HangSach = sach.HangSach,
+                            TenTheLoai = TheLoai.TenTheLoai,
+                            TenNgonNgu = NgonNgu.TenNgonNgu,
+                            TenTacGia = tacgia.TenTacGia
+                        };
+            return query.ToList();
+
             throw new NotImplementedException();
         }
 
         public void Update(int Id, Sach obj)
         {
-            var exobj = _dBContext.Sachs.FirstOrDefault(c => c.IDSach == Id);
+            var exobj = _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
 
             if (exobj == null)
             {
@@ -47,7 +69,7 @@ namespace DAL.Repositories
                 exobj.IDNgonNgu = obj.IDNgonNgu;
                 exobj.HangSach = obj.HangSach;
             }
-            _dBContext.Sachs.Update(exobj);
+            _dBContext.Sach.Update(exobj);
             _dBContext.SaveChanges();
             throw new NotImplementedException();
         }
