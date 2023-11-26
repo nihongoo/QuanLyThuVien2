@@ -34,6 +34,12 @@ namespace BUS.Service
             throw new NotImplementedException();
         }
 
+        public List<T> GetRecords<T>()
+        {
+            return _repo.GetRecords<T>();
+            throw new NotImplementedException();
+        }
+
         public void Update(int Id, Sach obj)
         {
             _repo.Update(Id, obj);

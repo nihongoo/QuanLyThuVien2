@@ -55,19 +55,28 @@ namespace DAL.Repositories
             throw new NotImplementedException();
         }
 
+        public List<T> GetRecords<T>()
+        {
+            List<T> records = new List<T>();
+            if (typeof(T) == typeof(TheLoaiSach))
+            {
+                return _dBContext.TheLoaiSach.ToList() as List<T>;
+            }
+            else if (typeof(T) == typeof(TacGia))
+            {
+                return _dBContext.TacGia.ToList() as List<T>;
+            }
+            else if (typeof(T) == typeof(NgonNgu))
+            {
+                return _dBContext.NgonNgu.ToList() as List<T>;
+            }
+            throw new NotImplementedException();
+        }
+
         public void Update(int Id, Sach obj)
         {
-            var exobj = _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
-
-            if (exobj == null)
-            {
-                exobj.IDSach = obj.IDSach;
-                exobj.TenSach = obj.TenSach;
-                exobj.IDTheLoai = obj.IDTheLoai;
-                exobj.IDNgonNgu = obj.IDNgonNgu;
-                exobj.HangSach = obj.HangSach;
-            }
-            _dBContext.Sach.Update(exobj);
+            _dBContext.Sach.Attach(obj);
+            _dBContext.Entry(obj).State = EntityState.Modified;
             _dBContext.SaveChanges();
             throw new NotImplementedException();
         }

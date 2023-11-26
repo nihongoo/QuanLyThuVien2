@@ -37,16 +37,19 @@
             textBox6 = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
-            comboBox5 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cbxNgonNgu = new ComboBox();
+            cbxTheLoai = new ComboBox();
+            cbxHangSach = new ComboBox();
+            cbxTacGia = new ComboBox();
             button1 = new Button();
+            label15 = new Label();
             label5 = new Label();
             label4 = new Label();
             label2 = new Label();
             label6 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtTenSach = new TextBox();
+            txtIDSach = new TextBox();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
             panel4 = new Panel();
@@ -76,7 +79,6 @@
             textBox9 = new TextBox();
             textBox7 = new TextBox();
             dataGridView2 = new DataGridView();
-            textBox2 = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
@@ -140,6 +142,7 @@
             button3.TabIndex = 0;
             button3.Text = "Sửa sách";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -149,6 +152,7 @@
             button2.TabIndex = 0;
             button2.Text = "Thêm sách";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox6
             // 
@@ -168,60 +172,80 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(comboBox5);
-            panel1.Controls.Add(comboBox3);
-            panel1.Controls.Add(comboBox2);
+            panel1.Controls.Add(cbxNgonNgu);
+            panel1.Controls.Add(cbxTheLoai);
+            panel1.Controls.Add(cbxHangSach);
+            panel1.Controls.Add(cbxTacGia);
             panel1.Controls.Add(button1);
+            panel1.Controls.Add(label15);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtTenSach);
+            panel1.Controls.Add(txtIDSach);
             panel1.Location = new Point(38, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(1518, 396);
             panel1.TabIndex = 2;
             // 
-            // comboBox5
+            // cbxNgonNgu
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(1065, 18);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(375, 49);
-            comboBox5.TabIndex = 5;
+            cbxNgonNgu.FormattingEnabled = true;
+            cbxNgonNgu.Location = new Point(1065, 18);
+            cbxNgonNgu.Name = "cbxNgonNgu";
+            cbxNgonNgu.Size = new Size(375, 49);
+            cbxNgonNgu.TabIndex = 5;
             // 
-            // comboBox3
+            // cbxTheLoai
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(268, 279);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(375, 49);
-            comboBox3.TabIndex = 5;
+            cbxTheLoai.FormattingEnabled = true;
+            cbxTheLoai.Location = new Point(258, 208);
+            cbxTheLoai.Name = "cbxTheLoai";
+            cbxTheLoai.Size = new Size(375, 49);
+            cbxTheLoai.TabIndex = 5;
             // 
-            // comboBox2
+            // cbxHangSach
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Thường", "VJp" });
-            comboBox2.Location = new Point(1065, 153);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(375, 49);
-            comboBox2.TabIndex = 4;
+            cbxHangSach.FormattingEnabled = true;
+            cbxHangSach.Items.AddRange(new object[] { "nor", "VJp" });
+            cbxHangSach.Location = new Point(1065, 204);
+            cbxHangSach.Name = "cbxHangSach";
+            cbxHangSach.Size = new Size(375, 49);
+            cbxHangSach.TabIndex = 4;
+            // 
+            // cbxTacGia
+            // 
+            cbxTacGia.FormattingEnabled = true;
+            cbxTacGia.Items.AddRange(new object[] { "Thường", "VJp" });
+            cbxTacGia.Location = new Point(1065, 111);
+            cbxTacGia.Name = "cbxTacGia";
+            cbxTacGia.Size = new Size(375, 49);
+            cbxTacGia.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(1065, 296);
+            button1.Location = new Point(1074, 323);
             button1.Name = "button1";
             button1.Size = new Size(375, 58);
             button1.TabIndex = 3;
             button1.Text = "Quản lý sách chi tiết";
             button1.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(833, 114);
+            label15.Name = "label15";
+            label15.Size = new Size(108, 41);
+            label15.TabIndex = 2;
+            label15.Text = "Tác giả";
+            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(36, 287);
+            label5.Location = new Point(36, 208);
             label5.Name = "label5";
             label5.Size = new Size(122, 41);
             label5.TabIndex = 2;
@@ -230,7 +254,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(833, 156);
+            label4.Location = new Point(833, 204);
             label4.Name = "label4";
             label4.Size = new Size(156, 41);
             label4.TabIndex = 2;
@@ -239,7 +263,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 156);
+            label2.Location = new Point(36, 119);
             label2.Name = "label2";
             label2.Size = new Size(131, 41);
             label2.TabIndex = 2;
@@ -263,12 +287,19 @@
             label3.TabIndex = 2;
             label3.Text = "Ngôn ngữ";
             // 
-            // textBox1
+            // txtTenSach
             // 
-            textBox1.Location = new Point(268, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(375, 47);
-            textBox1.TabIndex = 1;
+            txtTenSach.Location = new Point(258, 119);
+            txtTenSach.Name = "txtTenSach";
+            txtTenSach.Size = new Size(375, 47);
+            txtTenSach.TabIndex = 1;
+            // 
+            // txtIDSach
+            // 
+            txtIDSach.Location = new Point(258, 25);
+            txtIDSach.Name = "txtIDSach";
+            txtIDSach.Size = new Size(375, 47);
+            txtIDSach.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -279,6 +310,7 @@
             dataGridView1.RowTemplate.Height = 49;
             dataGridView1.Size = new Size(2314, 714);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // tabPage2
             // 
@@ -541,13 +573,6 @@
             dataGridView2.Size = new Size(2353, 762);
             dataGridView2.TabIndex = 0;
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(268, 150);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(375, 47);
-            textBox2.TabIndex = 1;
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -591,7 +616,7 @@
         private Label label2;
         private Label label6;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtIDSach;
         private DataGridView dataGridView1;
         private TabPage tabPage2;
         private DataGridView dataGridView2;
@@ -621,9 +646,11 @@
         private TextBox textBox11;
         private TextBox textBox9;
         private TextBox textBox7;
-        private ComboBox comboBox2;
-        private ComboBox comboBox5;
-        private ComboBox comboBox3;
-        private TextBox textBox2;
+        private ComboBox cbxTacGia;
+        private ComboBox cbxNgonNgu;
+        private ComboBox cbxTheLoai;
+        private TextBox txtTenSach;
+        private ComboBox cbxHangSach;
+        private Label label15;
     }
 }

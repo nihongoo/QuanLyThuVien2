@@ -32,10 +32,20 @@
             tabPage1 = new TabPage();
             dataGridView4 = new DataGridView();
             panel10 = new Panel();
+            cbxHangSach = new ComboBox();
+            cbxTacGia = new ComboBox();
+            cbxNgonNgu = new ComboBox();
+            cbxTheLoai = new ComboBox();
+            label18 = new Label();
+            label21 = new Label();
+            label20 = new Label();
+            label17 = new Label();
+            label19 = new Label();
+            label16 = new Label();
+            button11 = new Button();
             button10 = new Button();
-            textBox14 = new TextBox();
-            textBox11 = new TextBox();
-            textBox8 = new TextBox();
+            txtTenSach = new TextBox();
+            txtIDSach = new TextBox();
             tabPage2 = new TabPage();
             dataGridView2 = new DataGridView();
             panel5 = new Panel();
@@ -84,13 +94,6 @@
             label14 = new Label();
             panel9 = new Panel();
             label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
@@ -139,60 +142,154 @@
             // dataGridView4
             // 
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(23, 322);
+            dataGridView4.Location = new Point(23, 434);
             dataGridView4.Name = "dataGridView4";
             dataGridView4.RowHeadersWidth = 102;
             dataGridView4.RowTemplate.Height = 49;
-            dataGridView4.Size = new Size(1974, 761);
+            dataGridView4.Size = new Size(1974, 649);
             dataGridView4.TabIndex = 1;
             // 
             // panel10
             // 
-            panel10.Controls.Add(comboBox2);
-            panel10.Controls.Add(comboBox1);
+            panel10.Controls.Add(cbxHangSach);
+            panel10.Controls.Add(cbxTacGia);
+            panel10.Controls.Add(cbxNgonNgu);
+            panel10.Controls.Add(cbxTheLoai);
             panel10.Controls.Add(label18);
+            panel10.Controls.Add(label21);
             panel10.Controls.Add(label20);
             panel10.Controls.Add(label17);
             panel10.Controls.Add(label19);
             panel10.Controls.Add(label16);
+            panel10.Controls.Add(button11);
             panel10.Controls.Add(button10);
-            panel10.Controls.Add(textBox14);
-            panel10.Controls.Add(textBox11);
-            panel10.Controls.Add(textBox8);
+            panel10.Controls.Add(txtTenSach);
+            panel10.Controls.Add(txtIDSach);
             panel10.Location = new Point(23, 31);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1974, 244);
+            panel10.Size = new Size(1974, 352);
             panel10.TabIndex = 0;
+            // 
+            // cbxHangSach
+            // 
+            cbxHangSach.FormattingEnabled = true;
+            cbxHangSach.Items.AddRange(new object[] { "nor", "Vjp" });
+            cbxHangSach.Location = new Point(1410, 177);
+            cbxHangSach.Name = "cbxHangSach";
+            cbxHangSach.Size = new Size(521, 49);
+            cbxHangSach.TabIndex = 3;
+            // 
+            // cbxTacGia
+            // 
+            cbxTacGia.FormattingEnabled = true;
+            cbxTacGia.Location = new Point(1410, 109);
+            cbxTacGia.Name = "cbxTacGia";
+            cbxTacGia.Size = new Size(521, 49);
+            cbxTacGia.TabIndex = 3;
+            // 
+            // cbxNgonNgu
+            // 
+            cbxNgonNgu.FormattingEnabled = true;
+            cbxNgonNgu.Location = new Point(1410, 28);
+            cbxNgonNgu.Name = "cbxNgonNgu";
+            cbxNgonNgu.Size = new Size(521, 49);
+            cbxNgonNgu.TabIndex = 3;
+            // 
+            // cbxTheLoai
+            // 
+            cbxTheLoai.FormattingEnabled = true;
+            cbxTheLoai.Location = new Point(358, 177);
+            cbxTheLoai.Name = "cbxTheLoai";
+            cbxTheLoai.Size = new Size(582, 49);
+            cbxTheLoai.TabIndex = 3;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(86, 185);
+            label18.Name = "label18";
+            label18.Size = new Size(153, 41);
+            label18.TabIndex = 2;
+            label18.Text = "ID thể loại";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(1109, 105);
+            label21.Name = "label21";
+            label21.Size = new Size(131, 41);
+            label21.TabIndex = 2;
+            label21.Text = "IDTacGia";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(1109, 180);
+            label20.Name = "label20";
+            label20.Size = new Size(156, 41);
+            label20.TabIndex = 2;
+            label20.Text = "Hạng sách";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(86, 108);
+            label17.Name = "label17";
+            label17.Size = new Size(131, 41);
+            label17.TabIndex = 2;
+            label17.Text = "Tên sách";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(1109, 37);
+            label19.Name = "label19";
+            label19.Size = new Size(186, 41);
+            label19.TabIndex = 2;
+            label19.Text = "ID ngôn ngữ";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(86, 31);
+            label16.Name = "label16";
+            label16.Size = new Size(114, 41);
+            label16.TabIndex = 2;
+            label16.Text = "ID sách";
+            // 
+            // button11
+            // 
+            button11.Location = new Point(1109, 263);
+            button11.Name = "button11";
+            button11.Size = new Size(381, 58);
+            button11.TabIndex = 1;
+            button11.Text = "Thêm sách";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button10
             // 
-            button10.Location = new Point(1410, 176);
+            button10.Location = new Point(1550, 263);
             button10.Name = "button10";
-            button10.Size = new Size(521, 58);
+            button10.Size = new Size(381, 58);
             button10.TabIndex = 1;
-            button10.Text = "Thêm sách";
+            button10.Text = "Thoát";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
-            // textBox14
+            // txtTenSach
             // 
-            textBox14.Location = new Point(1410, 109);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(521, 47);
-            textBox14.TabIndex = 0;
+            txtTenSach.Location = new Point(358, 109);
+            txtTenSach.Name = "txtTenSach";
+            txtTenSach.Size = new Size(582, 47);
+            txtTenSach.TabIndex = 0;
             // 
-            // textBox11
+            // txtIDSach
             // 
-            textBox11.Location = new Point(358, 109);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(582, 47);
-            textBox11.TabIndex = 0;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(358, 31);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(582, 47);
-            textBox8.TabIndex = 0;
+            txtIDSach.Location = new Point(358, 31);
+            txtIDSach.Name = "txtIDSach";
+            txtIDSach.Size = new Size(582, 47);
+            txtIDSach.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -648,67 +745,6 @@
             label15.TabIndex = 0;
             label15.Text = "Quản lý thể loại";
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(86, 31);
-            label16.Name = "label16";
-            label16.Size = new Size(114, 41);
-            label16.TabIndex = 2;
-            label16.Text = "ID sách";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(86, 108);
-            label17.Name = "label17";
-            label17.Size = new Size(131, 41);
-            label17.TabIndex = 2;
-            label17.Text = "Tên sách";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(86, 185);
-            label18.Name = "label18";
-            label18.Size = new Size(153, 41);
-            label18.TabIndex = 2;
-            label18.Text = "ID thể loại";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(1109, 37);
-            label19.Name = "label19";
-            label19.Size = new Size(186, 41);
-            label19.TabIndex = 2;
-            label19.Text = "ID ngôn ngữ";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(1109, 112);
-            label20.Name = "label20";
-            label20.Size = new Size(156, 41);
-            label20.TabIndex = 2;
-            label20.Text = "Hạng sách";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(358, 177);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(582, 49);
-            comboBox1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(1410, 28);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(521, 49);
-            comboBox2.TabIndex = 3;
-            // 
             // ThemSach
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -717,6 +753,7 @@
             Controls.Add(tabControl1);
             Name = "ThemSach";
             Text = "Thêm sách";
+            Load += ThemSach_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
@@ -771,9 +808,8 @@
         private DataGridView dataGridView4;
         private Panel panel10;
         private Button button10;
-        private TextBox textBox14;
-        private TextBox textBox11;
-        private TextBox textBox8;
+        private TextBox txtTenSach;
+        private TextBox txtIDSach;
         private DataGridView dataGridView1;
         private Panel panel1;
         private Button button1;
@@ -804,12 +840,16 @@
         private Label label14;
         private Panel panel9;
         private Label label15;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbxNgonNgu;
+        private ComboBox cbxTheLoai;
         private Label label18;
         private Label label20;
         private Label label17;
         private Label label19;
         private Label label16;
+        private Label label21;
+        private ComboBox cbxTacGia;
+        private Button button11;
+        private ComboBox cbxHangSach;
     }
 }

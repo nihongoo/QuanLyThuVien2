@@ -13,5 +13,6 @@ namespace DAL.IRepositories
         Sach FindByID(int Id);
         public Sach Create(Sach obj);
         public void Update(int Id, Sach obj);
+        List<T> GetRecords<T>();//lấy dữ liệu từ bảng được truyền vào -> T
     }
 }
