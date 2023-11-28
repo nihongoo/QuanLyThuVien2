@@ -21,11 +21,15 @@ namespace QuanLyThuVien
         List<TacGia> _lstTacGia = new();
         List<NgonNgu> _lstNgonNgu = new();
         SachSev _SachSev;
+        DocGiaSev _DocGiaSev;
+        List<DocGia> _lstDG = new();
         int IdCell;
+        int IdCellDG;
         public Main()
         {
             InitializeComponent();
             _SachSev = new();
+            _DocGiaSev = new();
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,8 +49,11 @@ namespace QuanLyThuVien
                 }
             }
         }
-        private void LoadData()
+
+
+        private void LoadData(string Search, string Type)
         {
+            //tab sach
             dataGridView1.Rows.Clear();
             dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].Name = "ID Sach";
@@ -55,16 +62,40 @@ namespace QuanLyThuVien
             dataGridView1.Columns[3].Name = "Ngon Ngu";
             dataGridView1.Columns[4].Name = "Hang Sach";
             dataGridView1.Columns[5].Name = "Tac Gia";
+            //tab doc gia
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Clear();
+
+            dataGridView2.ColumnCount = 8;
+            dataGridView2.Columns[0].HeaderText = "ID Doc Gia";
+            dataGridView2.Columns[1].HeaderText = "Ten Doc Gia";
+            dataGridView2.Columns[2].HeaderText = "Dia Chi";
+            dataGridView2.Columns[3].HeaderText = "SDT";
+            dataGridView2.Columns[4].HeaderText = "Ngay Dang Ky";
+            dataGridView2.Columns[5].HeaderText = "Loai The";
+            dataGridView2.Columns[6].HeaderText = "CCCD";
 
             _lst = _SachSev.GetAll();
             _lstTheLoai = _SachSev.GetRecords<TheLoaiSach>();//truyền class TheLoaiSach để lấy dữ liệu từ bảng TheLoaiSach
             _lstNgonNgu = _SachSev.GetRecords<NgonNgu>();
             _lstTacGia = _SachSev.GetRecords<TacGia>();
+            _lstDG = _DocGiaSev.GetAll(Search, Type);//lấy list doc gia
 
             foreach (var item in _lst)
             {
                 int stt = _lst.IndexOf(item) + 1;
                 dataGridView1.Rows.Add(item.IDSach, item.TenSach, item.TenTheLoai, item.TenNgonNgu, item.HangSach, item.TenTacGia);
+            }
+
+            //if (_lstDG != null && _lstDG.Count > 0)
+            //{
+            //    dataGridView2.Rows[0].Selected = true;
+            //}
+
+            foreach (var item in _lstDG)
+            {
+                int stt = _lstDG.IndexOf(item) + 1;
+                dataGridView2.Rows.Add(item.IDDocGia, item.Ten, item.DiaChi, item.SDT, item.NgayDangKy, item.LoaiThe, item.CCCD);
             }
             cbxTheLoai.DataSource = _lstTheLoai;
             cbxTheLoai.DisplayMember = "TenTheLoai";
@@ -81,10 +112,10 @@ namespace QuanLyThuVien
 
         private void Main_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(null, null);
         }
 
-        private void button2_Click(object sender, EventArgs e)// create
+        private void button2_Click(object sender, EventArgs e)// create sach
         {
             ThemSach themSach = new ThemSach();
             themSach.ShowDialog();
@@ -104,7 +135,7 @@ namespace QuanLyThuVien
             cbxHangSach.Text = objindex.HangSach;
         }
 
-        private void button3_Click(object sender, EventArgs e)//update
+        private void button3_Click(object sender, EventArgs e)//update sach
         {
             if (string.IsNullOrEmpty(txtIDSach.Text) ||
                 string.IsNullOrEmpty(txtTenSach.Text) ||
@@ -123,13 +154,136 @@ namespace QuanLyThuVien
                 {
                     IDSach = Convert.ToInt32(txtIDSach.Text),
                     TenSach = txtTenSach.Text,
-                    IDTheLoai = Convert.ToInt32(cbxTheLoai.SelectedIndex),
-                    IDNgonNgu = Convert.ToInt32(cbxNgonNgu.SelectedIndex),
-                    IDTacGia = Convert.ToInt32(cbxTacGia.SelectedIndex),
-                    HangSach = cbxHangSach.Text
+                    IDTheLoai = Convert.ToInt32(cbxTheLoai.SelectedValue),
+                    IDNgonNgu = Convert.ToInt32(cbxNgonNgu.SelectedValue),
+                    IDTacGia = Convert.ToInt32(cbxTacGia.SelectedValue),
+                    HangSach = cbxHangSach.Text,
+                    TenNgonNgu = cbxNgonNgu.Text,
+                    TenTacGia = cbxTacGia.Text,
+                    TenTheLoai = cbxTheLoai.Text
                 });
-                LoadData();
+                LoadData(null, null);
             }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index < 0 || index >= _lstDG.Count) return;
+            var objindex = _lstDG[index];
+            IdCellDG = (int)objindex.IDDocGia;
+            txtIDDocGia.Text = objindex.IDDocGia.ToString();
+            txtTenDocGia.Text = objindex.Ten;
+            txtDiaChi.Text = objindex.DiaChi;
+            txtSDT.Text = objindex.SDT;
+            dpkNgayDangKy.Value = DateTime.Parse(objindex.NgayDangKy.ToString());
+            cbxLoaiThe.Text = objindex.LoaiThe;
+            txtCCCD.Text = objindex.CCCD;
+        }
+
+        private void button9_Click(object sender, EventArgs e)// them doc gia
+        {
+            if (string.IsNullOrEmpty(txtTenDocGia.Text) ||
+    string.IsNullOrEmpty(txtDiaChi.Text) ||
+    string.IsNullOrEmpty(txtSDT.Text) ||
+    string.IsNullOrEmpty(dpkNgayDangKy.Text) ||
+    string.IsNullOrEmpty(txtCCCD.Text) ||
+    string.IsNullOrEmpty(cbxLoaiThe.Text))
+            {
+                MessageBox.Show("Khong duoc de trong thong tin");
+                return;
+            }
+            var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+
+                _DocGiaSev.Create(new DocGia()
+                {
+                    //IDDocGia = _lstDG.Count +1,
+                    Ten = txtTenDocGia.Text,
+                    DiaChi = txtDiaChi.Text,
+                    SDT = txtSDT.Text,
+                    NgayDangKy = dpkNgayDangKy.Value,
+                    LoaiThe = cbxLoaiThe.Text,
+                    CCCD = txtCCCD.Text,
+                });
+                LoadData(null, null);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)// sua doc gia
+        {
+            if (string.IsNullOrEmpty(txtTenDocGia.Text) ||
+string.IsNullOrEmpty(txtDiaChi.Text) ||
+string.IsNullOrEmpty(txtSDT.Text) ||
+string.IsNullOrEmpty(dpkNgayDangKy.Text) ||
+string.IsNullOrEmpty(txtCCCD.Text) ||
+string.IsNullOrEmpty(cbxLoaiThe.Text))
+            {
+                MessageBox.Show("Khong duoc de trong thong tin");
+                return;
+            }
+            var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+
+                _DocGiaSev.Update(IdCellDG, new DocGia()
+                {
+                    //IDDocGia = _lstDG.Count +1,
+                    Ten = txtTenDocGia.Text,
+                    DiaChi = txtDiaChi.Text,
+                    SDT = txtSDT.Text,
+                    NgayDangKy = dpkNgayDangKy.Value,
+                    LoaiThe = cbxLoaiThe.Text,
+                    CCCD = txtCCCD.Text,
+                });
+                LoadData(null, null);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)//Xoa doc gia
+        {
+            var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+                _DocGiaSev.Delete(IdCellDG);
+                LoadData(null, null);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)// tim doc gia
+        {
+            if (cbxLoc.Text == "ID")
+            {
+                if (string.IsNullOrEmpty(txtFind.Text))
+                {
+                    MessageBox.Show("vui long nhap thong tin can tim");
+                    txtFind.Focus();
+                }
+                LoadData(txtFind.Text, cbxLoc.Text);
+            }
+            else if (cbxLoc.Text == "Tên")
+            {
+                if (string.IsNullOrEmpty(txtFind.Text))
+                {
+                    MessageBox.Show("vui long nhap thong tin can tim");
+                    txtFind.Focus();
+                }
+                //dataGridView2.Rows.Clear();
+                LoadData(txtFind.Text, cbxLoc.Text);
+            }
+            else
+            {
+                LoadData(null, null);
+                MessageBox.Show("vui long chon truong loc thong tin");
+                cbxLoc.Focus();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)//quan ly membership
+        {
+            QuanLyMembership qlmem = new QuanLyMembership();
+            qlmem.ShowDialog();
         }
     }
 }

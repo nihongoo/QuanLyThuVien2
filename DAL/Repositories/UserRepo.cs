@@ -17,21 +17,25 @@ namespace DAL.Repositories
         {
             _dBContext = new();
         }
-        public List<NguoiDung> GetAll()
+        public List<NguoiDung> GetAll(string Search, string Type)
         {
-            return _dBContext.NguoiDung.ToList();
-            throw new NotImplementedException();
-        }
-
-        public List<NguoiDung> FindByName(string value)
-        {
-            return _dBContext.NguoiDung.Where(n => n.Ten.Contains(value)).ToList();
-            throw new NotImplementedException();
-        }
-
-        public List<NguoiDung> FilterByUsedRole(string value)
-        {
-            return _dBContext.NguoiDung.Where(n => n.Quyen.Contains(value)).ToList();
+            if (string.IsNullOrEmpty(Search) && (string.IsNullOrEmpty(Type)))
+            {
+                return _dBContext.NguoiDung.ToList();
+            }
+            else if(Type == "Tên")
+            {
+                return _dBContext.NguoiDung.Where(n => n.Ten.Contains(Search)).ToList();
+            }
+            else if(Type == "Quyền")
+            {
+                return _dBContext.NguoiDung.Where(n => n.Quyen.Contains(Search)).ToList();
+            }
+            else
+            {
+                return _dBContext.NguoiDung.ToList();
+            }
+    
             throw new NotImplementedException();
         }
         public NguoiDung Create(NguoiDung obj)

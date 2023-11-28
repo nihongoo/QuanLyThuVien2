@@ -9,9 +9,7 @@ namespace DAL.IRepositories
 {
     public interface IUser
     {
-        List<NguoiDung> GetAll();
-        List<NguoiDung> FindByName(string value);
-        List<NguoiDung> FilterByUsedRole(string value);
+        List<NguoiDung> GetAll(string Search, string Type);
         public NguoiDung Create(NguoiDung obj);
         public void Update(string TaiKhoan, NguoiDung obj);
         public void Delete(string TaiKhoan);

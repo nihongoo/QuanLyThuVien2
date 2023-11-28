@@ -54,15 +54,16 @@
             tabPage2 = new TabPage();
             panel4 = new Panel();
             label14 = new Label();
-            comboBox1 = new ComboBox();
-            textBox14 = new TextBox();
-            button11 = new Button();
+            cbxLoc = new ComboBox();
+            txtFind = new TextBox();
             button8 = new Button();
             button10 = new Button();
             button7 = new Button();
             button9 = new Button();
             button6 = new Button();
             panel3 = new Panel();
+            cbxLoaiThe = new ComboBox();
+            dpkNgayDangKy = new DateTimePicker();
             button5 = new Button();
             label13 = new Label();
             label10 = new Label();
@@ -71,13 +72,11 @@
             label11 = new Label();
             label9 = new Label();
             label7 = new Label();
-            textBox13 = new TextBox();
-            textBox10 = new TextBox();
-            textBox12 = new TextBox();
-            textBox8 = new TextBox();
-            textBox11 = new TextBox();
-            textBox9 = new TextBox();
-            textBox7 = new TextBox();
+            txtCCCD = new TextBox();
+            txtSDT = new TextBox();
+            txtTenDocGia = new TextBox();
+            txtDiaChi = new TextBox();
+            txtIDDocGia = new TextBox();
             dataGridView2 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -328,9 +327,8 @@
             // panel4
             // 
             panel4.Controls.Add(label14);
-            panel4.Controls.Add(comboBox1);
-            panel4.Controls.Add(textBox14);
-            panel4.Controls.Add(button11);
+            panel4.Controls.Add(cbxLoc);
+            panel4.Controls.Add(txtFind);
             panel4.Controls.Add(button8);
             panel4.Controls.Add(button10);
             panel4.Controls.Add(button7);
@@ -350,30 +348,22 @@
             label14.TabIndex = 3;
             label14.Text = "Tìm theo";
             // 
-            // comboBox1
+            // cbxLoc
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(419, 75);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(401, 49);
-            comboBox1.TabIndex = 2;
-            comboBox1.Text = "Tên/ID";
+            cbxLoc.FormattingEnabled = true;
+            cbxLoc.Items.AddRange(new object[] { "Tên", "ID" });
+            cbxLoc.Location = new Point(419, 75);
+            cbxLoc.Name = "cbxLoc";
+            cbxLoc.Size = new Size(401, 49);
+            cbxLoc.TabIndex = 2;
+            cbxLoc.Text = "Tên/ID";
             // 
-            // textBox14
+            // txtFind
             // 
-            textBox14.Location = new Point(419, 189);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(401, 47);
-            textBox14.TabIndex = 1;
-            // 
-            // button11
-            // 
-            button11.Location = new Point(36, 317);
-            button11.Name = "button11";
-            button11.Size = new Size(352, 58);
-            button11.TabIndex = 0;
-            button11.Text = "Quản lý độc giả vi phạm";
-            button11.UseVisualStyleBackColor = true;
+            txtFind.Location = new Point(419, 189);
+            txtFind.Name = "txtFind";
+            txtFind.Size = new Size(401, 47);
+            txtFind.TabIndex = 1;
             // 
             // button8
             // 
@@ -383,24 +373,27 @@
             button8.TabIndex = 0;
             button8.Text = "Tìm độc giả";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button10
             // 
-            button10.Location = new Point(36, 95);
+            button10.Location = new Point(36, 113);
             button10.Name = "button10";
             button10.Size = new Size(352, 58);
             button10.TabIndex = 0;
             button10.Text = "Sửa độc giả";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(36, 243);
+            button7.Location = new Point(36, 297);
             button7.Name = "button7";
             button7.Size = new Size(352, 58);
             button7.TabIndex = 0;
             button7.Text = "Quản lý Membership";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button9
             // 
@@ -410,18 +403,22 @@
             button9.TabIndex = 0;
             button9.Text = "Thêm độc giả";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button6
             // 
-            button6.Location = new Point(36, 169);
+            button6.Location = new Point(36, 205);
             button6.Name = "button6";
             button6.Size = new Size(352, 58);
             button6.TabIndex = 0;
             button6.Text = "Xóa độc giả";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // panel3
             // 
+            panel3.Controls.Add(cbxLoaiThe);
+            panel3.Controls.Add(dpkNgayDangKy);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(label13);
             panel3.Controls.Add(label10);
@@ -430,17 +427,31 @@
             panel3.Controls.Add(label11);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label7);
-            panel3.Controls.Add(textBox13);
-            panel3.Controls.Add(textBox10);
-            panel3.Controls.Add(textBox12);
-            panel3.Controls.Add(textBox8);
-            panel3.Controls.Add(textBox11);
-            panel3.Controls.Add(textBox9);
-            panel3.Controls.Add(textBox7);
+            panel3.Controls.Add(txtCCCD);
+            panel3.Controls.Add(txtSDT);
+            panel3.Controls.Add(txtTenDocGia);
+            panel3.Controls.Add(txtDiaChi);
+            panel3.Controls.Add(txtIDDocGia);
             panel3.Location = new Point(15, 21);
             panel3.Name = "panel3";
             panel3.Size = new Size(1455, 407);
             panel3.TabIndex = 1;
+            // 
+            // cbxLoaiThe
+            // 
+            cbxLoaiThe.FormattingEnabled = true;
+            cbxLoaiThe.Location = new Point(944, 118);
+            cbxLoaiThe.Name = "cbxLoaiThe";
+            cbxLoaiThe.Size = new Size(398, 49);
+            cbxLoaiThe.TabIndex = 4;
+            // 
+            // dpkNgayDangKy
+            // 
+            dpkNgayDangKy.Format = DateTimePickerFormat.Short;
+            dpkNgayDangKy.Location = new Point(944, 35);
+            dpkNgayDangKy.Name = "dpkNgayDangKy";
+            dpkNgayDangKy.Size = new Size(398, 47);
+            dpkNgayDangKy.TabIndex = 3;
             // 
             // button5
             // 
@@ -514,54 +525,40 @@
             label7.TabIndex = 1;
             label7.Text = "ID độc giả";
             // 
-            // textBox13
+            // txtCCCD
             // 
-            textBox13.Location = new Point(944, 208);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(398, 47);
-            textBox13.TabIndex = 0;
+            txtCCCD.Location = new Point(944, 208);
+            txtCCCD.Name = "txtCCCD";
+            txtCCCD.Size = new Size(398, 47);
+            txtCCCD.TabIndex = 0;
             // 
-            // textBox10
+            // txtSDT
             // 
-            textBox10.Location = new Point(240, 296);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(398, 47);
-            textBox10.TabIndex = 0;
+            txtSDT.Location = new Point(240, 296);
+            txtSDT.Name = "txtSDT";
+            txtSDT.Size = new Size(398, 47);
+            txtSDT.TabIndex = 0;
             // 
-            // textBox12
+            // txtTenDocGia
             // 
-            textBox12.Location = new Point(944, 32);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(398, 47);
-            textBox12.TabIndex = 0;
+            txtTenDocGia.Location = new Point(240, 120);
+            txtTenDocGia.Name = "txtTenDocGia";
+            txtTenDocGia.Size = new Size(398, 47);
+            txtTenDocGia.TabIndex = 0;
             // 
-            // textBox8
+            // txtDiaChi
             // 
-            textBox8.Location = new Point(240, 120);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(398, 47);
-            textBox8.TabIndex = 0;
+            txtDiaChi.Location = new Point(240, 208);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(398, 47);
+            txtDiaChi.TabIndex = 0;
             // 
-            // textBox11
+            // txtIDDocGia
             // 
-            textBox11.Location = new Point(944, 120);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(398, 47);
-            textBox11.TabIndex = 0;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(240, 208);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(398, 47);
-            textBox9.TabIndex = 0;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(240, 32);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(398, 47);
-            textBox7.TabIndex = 0;
+            txtIDDocGia.Location = new Point(240, 32);
+            txtIDDocGia.Name = "txtIDDocGia";
+            txtIDDocGia.Size = new Size(398, 47);
+            txtIDDocGia.TabIndex = 0;
             // 
             // dataGridView2
             // 
@@ -572,6 +569,7 @@
             dataGridView2.RowTemplate.Height = 49;
             dataGridView2.Size = new Size(2353, 762);
             dataGridView2.TabIndex = 0;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // Main
             // 
@@ -622,9 +620,8 @@
         private DataGridView dataGridView2;
         private Panel panel4;
         private Label label14;
-        private ComboBox comboBox1;
-        private TextBox textBox14;
-        private Button button11;
+        private ComboBox cbxLoc;
+        private TextBox txtFind;
         private Button button8;
         private Button button10;
         private Button button7;
@@ -639,18 +636,18 @@
         private Label label11;
         private Label label9;
         private Label label7;
-        private TextBox textBox13;
-        private TextBox textBox10;
-        private TextBox textBox12;
-        private TextBox textBox8;
-        private TextBox textBox11;
-        private TextBox textBox9;
-        private TextBox textBox7;
+        private TextBox txtCCCD;
+        private TextBox txtSDT;
+        private TextBox txtTenDocGia;
+        private TextBox txtDiaChi;
+        private TextBox txtIDDocGia;
         private ComboBox cbxTacGia;
         private ComboBox cbxNgonNgu;
         private ComboBox cbxTheLoai;
         private TextBox txtTenSach;
         private ComboBox cbxHangSach;
         private Label label15;
+        private ComboBox cbxLoaiThe;
+        private DateTimePicker dpkNgayDangKy;
     }
 }

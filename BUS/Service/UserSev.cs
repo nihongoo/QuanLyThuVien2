@@ -34,21 +34,9 @@ namespace BUS.Service
             _repo.Delete(TaiKhoan);
         }
 
-        public List<NguoiDung> FilterByUsedRole(string value)
+        public List<NguoiDung> GetAll(string Search, string Type)
         {
-            return _repo.FilterByUsedRole(value);
-            throw new NotImplementedException();
-        }
-
-        public List<NguoiDung> FindByName(string value)
-        {
-            return _repo.FindByName(value);
-            throw new NotImplementedException();
-        }
-
-        public List<NguoiDung> GetAll()
-        {
-            return _repo.GetAll();
+            return _repo.GetAll(Search, Type);
             throw new NotImplementedException();
         }
 

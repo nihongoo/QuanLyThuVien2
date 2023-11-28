@@ -43,7 +43,7 @@ namespace BUS.Service
         public void Update(int Id, Sach obj)
         {
             _repo.Update(Id, obj);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

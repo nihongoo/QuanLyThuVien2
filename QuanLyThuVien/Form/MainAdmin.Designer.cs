@@ -33,14 +33,15 @@
             dataGridView5 = new DataGridView();
             panel11 = new Panel();
             label31 = new Label();
-            comboBox2 = new ComboBox();
+            cbxLoc2 = new ComboBox();
             button24 = new Button();
             button23 = new Button();
-            textBox30 = new TextBox();
+            txtFind2 = new TextBox();
             button22 = new Button();
             button21 = new Button();
             button20 = new Button();
             panel10 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             txtSdt = new TextBox();
             cbxQuyen = new ComboBox();
             txtMail = new TextBox();
@@ -147,7 +148,6 @@
             textBox25 = new TextBox();
             textBox26 = new TextBox();
             tabPage6 = new TabPage();
-            dateTimePicker1 = new DateTimePicker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
@@ -215,10 +215,10 @@
             // panel11
             // 
             panel11.Controls.Add(label31);
-            panel11.Controls.Add(comboBox2);
+            panel11.Controls.Add(cbxLoc2);
             panel11.Controls.Add(button24);
             panel11.Controls.Add(button23);
-            panel11.Controls.Add(textBox30);
+            panel11.Controls.Add(txtFind2);
             panel11.Controls.Add(button22);
             panel11.Controls.Add(button21);
             panel11.Controls.Add(button20);
@@ -236,14 +236,15 @@
             label31.TabIndex = 3;
             label31.Text = "Tìm người dùng theo";
             // 
-            // comboBox2
+            // cbxLoc2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(3, 425);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(652, 49);
-            comboBox2.TabIndex = 2;
-            comboBox2.Text = "Tên/Quyền";
+            cbxLoc2.FormattingEnabled = true;
+            cbxLoc2.Items.AddRange(new object[] { "Tên", "Quyền" });
+            cbxLoc2.Location = new Point(3, 425);
+            cbxLoc2.Name = "cbxLoc2";
+            cbxLoc2.Size = new Size(652, 49);
+            cbxLoc2.TabIndex = 2;
+            cbxLoc2.Text = "Tên/Quyền";
             // 
             // button24
             // 
@@ -253,6 +254,7 @@
             button24.TabIndex = 0;
             button24.Text = "Tìm";
             button24.UseVisualStyleBackColor = true;
+            button24.Click += button24_Click;
             // 
             // button23
             // 
@@ -263,12 +265,12 @@
             button23.Text = "Đổi mật khẩu";
             button23.UseVisualStyleBackColor = true;
             // 
-            // textBox30
+            // txtFind2
             // 
-            textBox30.Location = new Point(3, 511);
-            textBox30.Name = "textBox30";
-            textBox30.Size = new Size(472, 47);
-            textBox30.TabIndex = 1;
+            txtFind2.Location = new Point(3, 511);
+            txtFind2.Name = "txtFind2";
+            txtFind2.Size = new Size(472, 47);
+            txtFind2.TabIndex = 1;
             // 
             // button22
             // 
@@ -322,6 +324,14 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(1654, 575);
             panel10.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(1149, 190);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(467, 47);
+            dateTimePicker1.TabIndex = 3;
             // 
             // txtSdt
             // 
@@ -1288,14 +1298,6 @@
             tabPage6.Text = "Thống kê quá hạn";
             tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(1149, 190);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(467, 47);
-            dateTimePicker1.TabIndex = 3;
-            // 
             // MainAdmin
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -1441,10 +1443,10 @@
         private Label label27;
         private DataGridView dataGridView5;
         private Label label31;
-        private ComboBox comboBox2;
+        private ComboBox cbxLoc2;
         private Button button24;
         private Button button23;
-        private TextBox textBox30;
+        private TextBox txtFind2;
         private Button button22;
         private Button button21;
         private Button button20;

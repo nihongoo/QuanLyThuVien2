@@ -75,10 +75,39 @@ namespace DAL.Repositories
 
         public void Update(int Id, Sach obj)
         {
-            _dBContext.Sach.Attach(obj);
-            _dBContext.Entry(obj).State = EntityState.Modified;
+            //_dBContext.Sach.Attach(obj);
+            //_dBContext.Entry(obj).State = EntityState.Modified;
+            //_dBContext.SaveChanges();
+            var query = from sach in _dBContext.Sach
+                        join TheLoai in _dBContext.TheLoaiSach
+                        on sach.IDTheLoai equals TheLoai.IDTheLoai
+                        join NgonNgu in _dBContext.NgonNgu
+                        on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
+                        join tacgia in _dBContext.TacGia
+                        on sach.IDTacGia equals tacgia.IDTacGia
+                        select new Sach
+                        {
+                            IDSach = sach.IDSach,
+                            TenSach = sach.TenSach,
+                            IDTheLoai = sach.IDTheLoai,
+                            IDNgonNgu = sach.IDNgonNgu,
+                            HangSach = sach.HangSach,
+                            TenTheLoai = TheLoai.TenTheLoai,
+                            TenNgonNgu = NgonNgu.TenNgonNgu,
+                            TenTacGia = tacgia.TenTacGia
+                        };
+            var exobj = query.AsNoTracking().FirstOrDefault(c => c.IDSach == Id);
+            if(exobj != null)
+            {
+                exobj.TenSach = obj.TenSach;
+                exobj.IDTacGia = obj.IDTacGia;
+                exobj.IDNgonNgu = obj.IDNgonNgu;
+                exobj.HangSach = obj.HangSach;
+                exobj.IDTheLoai = obj.IDTheLoai;
+            }
+            _dBContext.Update(exobj);
             _dBContext.SaveChanges();
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

@@ -48,8 +48,9 @@ namespace QuanLyThuVien
         {
             //LoadData();
         }
-        private void LoadData()
+        private void LoadData(string Search, string Type)
         {
+            dataGridView5.DataSource = null;
             dataGridView5.Rows.Clear();
             dataGridView5.ColumnCount = 8;
             dataGridView5.Columns[0].Name = "Tai Khoan";
@@ -61,7 +62,7 @@ namespace QuanLyThuVien
             dataGridView5.Columns[6].Name = "SDT";
             dataGridView5.Columns[7].Name = "Quyen";
 
-            _lst = _UserSev.GetAll();
+            _lst = _UserSev.GetAll(Search, Type);
 
             foreach (var item in _lst)
             {
@@ -72,7 +73,7 @@ namespace QuanLyThuVien
 
         private void MainAdmin_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(null, null);
         }
 
         private void button20_Click(object sender, EventArgs e)//create
@@ -101,7 +102,7 @@ namespace QuanLyThuVien
                     SDT = txtSdt.Text,
                     Quyen = cbxQuyen.Text,
                 });
-                LoadData();
+                LoadData(null, null);
             }
         }
         private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)//lấy tài khoản và fill lên textbox khi cell click
@@ -145,7 +146,7 @@ namespace QuanLyThuVien
                     SDT = txtSdt.Text,
                     Quyen = cbxQuyen.Text,
                 });
-                LoadData();
+                LoadData(null, null);
             }
         }
 
@@ -155,9 +156,36 @@ namespace QuanLyThuVien
             if (confirm == DialogResult.OK)
             {
                 _UserSev.Delete(idCell);
-                LoadData();
+                LoadData(null, null);
             }
         }
 
+        private void button24_Click(object sender, EventArgs e)//tim
+        {
+            if (cbxLoc2.Text == "Tên")
+            {
+                if (string.IsNullOrEmpty(txtFind2.Text))
+                {
+                    MessageBox.Show("vui long nhap thong tin can tim");
+                    txtFind2.Focus();
+                }
+                LoadData(txtFind2.Text, cbxLoc2.Text);
+            }
+            else if(cbxLoc2.Text == "Quyền")
+            {
+                if (string.IsNullOrEmpty(txtFind2.Text))
+                {
+                    MessageBox.Show("vui long nhap thong tin can tim");
+                    txtFind2.Focus();
+                }
+                LoadData(txtFind2.Text, cbxLoc2.Text);
+            }
+            else
+            {
+                LoadData(null, null);
+                MessageBox.Show("vui long chon truong loc thong tin");
+                cbxLoc2.Focus();
+            }
+        }
     }
 }
