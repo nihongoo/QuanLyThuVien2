@@ -9,10 +9,10 @@ namespace BUS.IService
 {
     public interface ISachSev
     {
-        List<Sach> GetAll();
-        Sach FindByID(int Id);
+        List<SachView> GetAll();
         public Sach Create(Sach obj);
         public void Update(int Id, Sach obj);
+        public void Delete(int Id);
         List<T> GetRecords<T>();
     }
 }

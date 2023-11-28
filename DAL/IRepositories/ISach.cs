@@ -9,10 +9,10 @@ namespace DAL.IRepositories
 {
     public interface ISach
     {
-        List<Sach> GetAll();
-        Sach FindByID(int Id);
+        List<SachView> GetAll();
         public Sach Create(Sach obj);
         public void Update(int Id, Sach obj);
+        public void Delete(int Id);
         List<T> GetRecords<T>();//lấy dữ liệu từ bảng được truyền vào -> T
     }
 }

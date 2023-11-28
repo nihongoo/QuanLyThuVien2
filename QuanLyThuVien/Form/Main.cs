@@ -16,7 +16,7 @@ namespace QuanLyThuVien
     public partial class Main : Form
     {
         private bool isClosing = false;// kiểm tra xem đã gọi phương thức đóng chương trình chưa
-        List<Sach> _lst = new();
+        List<SachView> _lst = new();
         List<TheLoaiSach> _lstTheLoai = new();
         List<TacGia> _lstTacGia = new();
         List<NgonNgu> _lstNgonNgu = new();
@@ -158,9 +158,9 @@ namespace QuanLyThuVien
                     IDNgonNgu = Convert.ToInt32(cbxNgonNgu.SelectedValue),
                     IDTacGia = Convert.ToInt32(cbxTacGia.SelectedValue),
                     HangSach = cbxHangSach.Text,
-                    TenNgonNgu = cbxNgonNgu.Text,
-                    TenTacGia = cbxTacGia.Text,
-                    TenTheLoai = cbxTheLoai.Text
+                    //TenNgonNgu = cbxNgonNgu.Text,
+                    //TenTacGia = cbxTacGia.Text,
+                    //TenTheLoai = cbxTheLoai.Text
                 });
                 LoadData(null, null);
             }
@@ -284,6 +284,21 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
         {
             QuanLyMembership qlmem = new QuanLyMembership();
             qlmem.ShowDialog();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)//xóa sách
+        {
+            var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+                _SachSev.Delete(IdCell);
+                LoadData(null, null);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)//tìm sách
+        {
+
         }
     }
 }

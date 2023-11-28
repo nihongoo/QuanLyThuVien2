@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Sach
+    public class SachView
     {
         [Key] public int? IDSach { get; set; }
         public string TenSach { get; set; }
@@ -18,11 +17,10 @@ namespace DAL.Models
         public string HangSach { get; set; }
 
         //[ForeignKey("IDTheLoai")]
-        //public TheLoaiSach? TenTheLoai { get; set; }
+        public string? TenTheLoai { get; set; }
 
-        ////[ForeignKey("IDNgonNgu")]
-        //public NgonNgu? TenNgonNgu { get; set; }
-        //public TacGia? TenTacGia { get; set; }
+        //[ForeignKey("IDNgonNgu")]
+        public string? TenNgonNgu { get; set; }
+        public string? TenTacGia { get; set; }
     }
 }
-

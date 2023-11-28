@@ -22,13 +22,13 @@ namespace BUS.Service
             throw new NotImplementedException();
         }
 
-        public Sach FindByID(int Id)
+        public void Delete(int Id)
         {
-            return _repo.FindByID(Id);
-            throw new NotImplementedException();
+            _repo.Delete(Id);
+            //throw new NotImplementedException();
         }
 
-        public List<Sach> GetAll()
+        public List<SachView> GetAll()
         {
             return _repo.GetAll();
             throw new NotImplementedException();

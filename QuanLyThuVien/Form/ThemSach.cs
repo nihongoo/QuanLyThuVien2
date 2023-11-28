@@ -15,11 +15,14 @@ namespace QuanLyThuVien
 {
     public partial class ThemSach : Form
     {
-        List<Sach> _lst = new();
+        List<SachView> _lst = new();
+        List<Sach> _lstS = new();
         List<TheLoaiSach> _lstTheLoai = new();
         List<TacGia> _lstTacGia = new();
         List<NgonNgu> _lstNgonNgu = new();
         SachSev _SachSev;
+        int IDSach;
+        int IdCell;
         public ThemSach()
         {
             InitializeComponent();
@@ -83,17 +86,39 @@ namespace QuanLyThuVien
             var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
             if (confirm == DialogResult.OK)
             {
-
+                IDSach = _lst.Count;
                 _SachSev.Create(new Sach()
                 {
+                    //DSach = IDSach + 1,
                     TenSach = txtTenSach.Text,
-                    IDTheLoai = cbxTheLoai.SelectedIndex,
-                    IDNgonNgu = cbxNgonNgu.SelectedIndex,
-                    IDTacGia = cbxTacGia.SelectedIndex,
+                    IDTheLoai = GetSelectedID(cbxTheLoai),
+                    IDNgonNgu = GetSelectedID(cbxNgonNgu),
+                    IDTacGia = GetSelectedID(cbxTacGia),
                     HangSach = cbxHangSach.Text,
                 });
                 LoadData();
             }
+        }
+        private int GetSelectedID(ComboBox comboBox)
+        {
+            // Xác định giá trị thực sự của item được chọn trong ComboBox
+            // (Bạn có thể cần thêm kiểm tra null nếu có thể ComboBox chưa được chọn)
+            // Giả sử giá trị là kiểu int, bạn có thể điều chỉnh cho kiểu dữ liệu khác
+            return comboBox.SelectedIndex + 1; // Điều chỉnh nếu index bắt đầu từ 0
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index < 0 || index >= _lst.Count) return;
+            var objindex = _lst[index];
+            IdCell = (int)objindex.IDSach;
+            txtIDSach.Text = objindex.IDSach.ToString();
+            txtTenSach.Text = objindex.TenSach;
+            cbxTheLoai.Text = objindex.TenTheLoai;
+            cbxNgonNgu.Text = objindex.TenNgonNgu;
+            cbxTacGia.Text = objindex.TenTacGia;
+            cbxHangSach.Text = objindex.HangSach;
         }
     }
 }

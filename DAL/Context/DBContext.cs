@@ -29,6 +29,7 @@ namespace DAL.Context
         public virtual DbSet<PhieuTra> PhieuTra { get; set; }
         public virtual DbSet<PhieuTraCT> PhieuTraCT { get; set; }
         public virtual DbSet<Sach> Sach { get; set; }
+        public virtual DbSet<SachView> SachView { get; set; }
         public virtual DbSet<SachCT> SachCT { get; set; }
         public virtual DbSet<TacGia> TacGia { get; set; }
         public virtual DbSet<TheLoaiSach> TheLoaiSach { get; set; }

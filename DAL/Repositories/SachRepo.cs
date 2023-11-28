@@ -4,6 +4,7 @@ using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,18 +20,41 @@ namespace DAL.Repositories
         }
         public Sach Create(Sach obj)
         {
-            _dBContext.Sach.Add(obj);
+            var exobj = _dBContext.Sach.FirstOrDefault(c => c.IDSach == obj.IDSach);
+            if (exobj != null)
+            {
+                exobj.TenSach = obj.TenSach;
+                exobj.IDTacGia = obj.IDTacGia;
+                exobj.IDNgonNgu = obj.IDNgonNgu;
+                exobj.IDTheLoai = obj.IDTheLoai;
+                exobj.HangSach = obj.HangSach;
+            }
+            else
+            {
+                // Nếu đối tượng không tồn tại, tạo đối tượng mới
+                _dBContext.Sach.Add(obj);
+            }
+
+            // Gọi SaveChanges sau khi thực hiện tất cả các thay đổi
             _dBContext.SaveChanges();
-            throw new NotImplementedException();
+
+            return obj;
+
         }
 
-        public Sach FindByID(int Id)
+        public void Delete(int Id)
         {
-            return _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
-            throw new NotImplementedException();
+            var exobj = _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
+
+            if (exobj != null)
+            {
+                _dBContext.Sach.Remove(exobj);
+                _dBContext.SaveChanges();
+            }
         }
 
-        public List<Sach> GetAll()
+
+        public List<SachView> GetAll()
         {
             var query = from sach in _dBContext.Sach
                         join TheLoai in _dBContext.TheLoaiSach
@@ -39,7 +63,7 @@ namespace DAL.Repositories
                         on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
                         join tacgia in _dBContext.TacGia
                         on sach.IDTacGia equals tacgia.IDTacGia
-                        select new Sach
+                        select new SachView
                         {
                             IDSach = sach.IDSach,
                             TenSach = sach.TenSach,
@@ -75,28 +99,7 @@ namespace DAL.Repositories
 
         public void Update(int Id, Sach obj)
         {
-            //_dBContext.Sach.Attach(obj);
-            //_dBContext.Entry(obj).State = EntityState.Modified;
-            //_dBContext.SaveChanges();
-            var query = from sach in _dBContext.Sach
-                        join TheLoai in _dBContext.TheLoaiSach
-                        on sach.IDTheLoai equals TheLoai.IDTheLoai
-                        join NgonNgu in _dBContext.NgonNgu
-                        on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
-                        join tacgia in _dBContext.TacGia
-                        on sach.IDTacGia equals tacgia.IDTacGia
-                        select new Sach
-                        {
-                            IDSach = sach.IDSach,
-                            TenSach = sach.TenSach,
-                            IDTheLoai = sach.IDTheLoai,
-                            IDNgonNgu = sach.IDNgonNgu,
-                            HangSach = sach.HangSach,
-                            TenTheLoai = TheLoai.TenTheLoai,
-                            TenNgonNgu = NgonNgu.TenNgonNgu,
-                            TenTacGia = tacgia.TenTacGia
-                        };
-            var exobj = query.AsNoTracking().FirstOrDefault(c => c.IDSach == Id);
+            var exobj = _dBContext.Sach.FirstOrDefault(c => c.IDSach == Id);
             if(exobj != null)
             {
                 exobj.TenSach = obj.TenSach;
@@ -105,9 +108,8 @@ namespace DAL.Repositories
                 exobj.HangSach = obj.HangSach;
                 exobj.IDTheLoai = obj.IDTheLoai;
             }
-            _dBContext.Update(exobj);
+            _dBContext.Sach.Update(exobj);
             _dBContext.SaveChanges();
-            //throw new NotImplementedException();
         }
     }
 }

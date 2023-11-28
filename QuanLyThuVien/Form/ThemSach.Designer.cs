@@ -148,6 +148,7 @@
             dataGridView4.RowTemplate.Height = 49;
             dataGridView4.Size = new Size(1974, 649);
             dataGridView4.TabIndex = 1;
+            dataGridView4.CellClick += dataGridView4_CellClick;
             // 
             // panel10
             // 

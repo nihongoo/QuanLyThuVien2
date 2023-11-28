@@ -78,6 +78,7 @@
             txtDiaChi = new TextBox();
             txtIDDocGia = new TextBox();
             dataGridView2 = new DataGridView();
+            btDelete = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btDelete);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
@@ -126,16 +128,17 @@
             // 
             // button4
             // 
-            button4.Location = new Point(413, 296);
+            button4.Location = new Point(413, 323);
             button4.Name = "button4";
             button4.Size = new Size(280, 58);
             button4.TabIndex = 0;
             button4.Text = "Tìm sách";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(36, 101);
+            button3.Location = new Point(36, 90);
             button3.Name = "button3";
             button3.Size = new Size(657, 58);
             button3.TabIndex = 0;
@@ -155,7 +158,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(36, 224);
+            textBox6.Location = new Point(36, 270);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(657, 47);
             textBox6.TabIndex = 1;
@@ -163,7 +166,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 180);
+            label1.Location = new Point(36, 226);
             label1.Name = "label1";
             label1.Size = new Size(114, 41);
             label1.TabIndex = 2;
@@ -571,6 +574,16 @@
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
             // 
+            // btDelete
+            // 
+            btDelete.Location = new Point(36, 164);
+            btDelete.Name = "btDelete";
+            btDelete.Size = new Size(657, 58);
+            btDelete.TabIndex = 3;
+            btDelete.Text = "Xóa sách";
+            btDelete.UseVisualStyleBackColor = true;
+            btDelete.Click += btDelete_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -649,5 +662,6 @@
         private Label label15;
         private ComboBox cbxLoaiThe;
         private DateTimePicker dpkNgayDangKy;
+        private Button btDelete;
     }
 }
