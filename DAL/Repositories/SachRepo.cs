@@ -54,27 +54,53 @@ namespace DAL.Repositories
         }
 
 
-        public List<SachView> GetAll()
+        public List<SachView> GetAll(string Search)
         {
-            var query = from sach in _dBContext.Sach
-                        join TheLoai in _dBContext.TheLoaiSach
-                        on sach.IDTheLoai equals TheLoai.IDTheLoai
-                        join NgonNgu in _dBContext.NgonNgu
-                        on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
-                        join tacgia in _dBContext.TacGia
-                        on sach.IDTacGia equals tacgia.IDTacGia
-                        select new SachView
-                        {
-                            IDSach = sach.IDSach,
-                            TenSach = sach.TenSach,
-                            IDTheLoai = sach.IDTheLoai,
-                            IDNgonNgu = sach.IDNgonNgu,
-                            HangSach = sach.HangSach,
-                            TenTheLoai = TheLoai.TenTheLoai,
-                            TenNgonNgu = NgonNgu.TenNgonNgu,
-                            TenTacGia = tacgia.TenTacGia
-                        };
-            return query.ToList();
+            if (string.IsNullOrEmpty(Search))
+            {
+                var query = from sach in _dBContext.Sach
+                            join TheLoai in _dBContext.TheLoaiSach
+                            on sach.IDTheLoai equals TheLoai.IDTheLoai
+                            join NgonNgu in _dBContext.NgonNgu
+                            on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
+                            join tacgia in _dBContext.TacGia
+                            on sach.IDTacGia equals tacgia.IDTacGia
+                            select new SachView
+                            {
+                                IDSach = sach.IDSach,
+                                TenSach = sach.TenSach,
+                                IDTheLoai = sach.IDTheLoai,
+                                IDNgonNgu = sach.IDNgonNgu,
+                                HangSach = sach.HangSach,
+                                TenTheLoai = TheLoai.TenTheLoai,
+                                TenNgonNgu = NgonNgu.TenNgonNgu,
+                                TenTacGia = tacgia.TenTacGia
+                            };
+                return query.ToList();
+            }
+            else
+            {
+                var query = from sach in _dBContext.Sach
+                            join TheLoai in _dBContext.TheLoaiSach
+                            on sach.IDTheLoai equals TheLoai.IDTheLoai
+                            join NgonNgu in _dBContext.NgonNgu
+                            on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
+                            join tacgia in _dBContext.TacGia
+                            on sach.IDTacGia equals tacgia.IDTacGia
+                            select new SachView
+                            {
+                                IDSach = sach.IDSach,
+                                TenSach = sach.TenSach,
+                                IDTheLoai = sach.IDTheLoai,
+                                IDNgonNgu = sach.IDNgonNgu,
+                                HangSach = sach.HangSach,
+                                TenTheLoai = TheLoai.TenTheLoai,
+                                TenNgonNgu = NgonNgu.TenNgonNgu,
+                                TenTacGia = tacgia.TenTacGia
+                            };
+                return query.Where(c => c.IDSach.ToString().Contains(Search)).ToList();
+            }
+
 
             throw new NotImplementedException();
         }

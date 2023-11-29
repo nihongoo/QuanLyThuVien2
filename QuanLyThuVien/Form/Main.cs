@@ -54,6 +54,7 @@ namespace QuanLyThuVien
         private void LoadData(string Search, string Type)
         {
             //tab sach
+            dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].Name = "ID Sach";
@@ -65,7 +66,6 @@ namespace QuanLyThuVien
             //tab doc gia
             dataGridView2.DataSource = null;
             dataGridView2.Rows.Clear();
-
             dataGridView2.ColumnCount = 8;
             dataGridView2.Columns[0].HeaderText = "ID Doc Gia";
             dataGridView2.Columns[1].HeaderText = "Ten Doc Gia";
@@ -75,7 +75,7 @@ namespace QuanLyThuVien
             dataGridView2.Columns[5].HeaderText = "Loai The";
             dataGridView2.Columns[6].HeaderText = "CCCD";
 
-            _lst = _SachSev.GetAll();
+            _lst = _SachSev.GetAll(Search);
             _lstTheLoai = _SachSev.GetRecords<TheLoaiSach>();//truyền class TheLoaiSach để lấy dữ liệu từ bảng TheLoaiSach
             _lstNgonNgu = _SachSev.GetRecords<NgonNgu>();
             _lstTacGia = _SachSev.GetRecords<TacGia>();
@@ -298,7 +298,22 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
 
         private void button4_Click(object sender, EventArgs e)//tìm sách
         {
+            if (string.IsNullOrEmpty(txtFindS.Text))
+            {
+                MessageBox.Show("vui long nhap thong tin can tim");
+                LoadData(null, null);
+                txtFindS.Focus();
+            }
+            else
+            {
+                LoadData(txtFindS.Text, null);
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            QuanLySachChiTiet qlSachCT = new QuanLySachChiTiet();
+            qlSachCT.ShowDialog();
         }
     }
 }

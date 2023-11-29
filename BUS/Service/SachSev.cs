@@ -28,9 +28,9 @@ namespace BUS.Service
             //throw new NotImplementedException();
         }
 
-        public List<SachView> GetAll()
+        public List<SachView> GetAll(string Search)
         {
-            return _repo.GetAll();
+            return _repo.GetAll(Search);
             throw new NotImplementedException();
         }
 

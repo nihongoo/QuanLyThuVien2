@@ -31,10 +31,11 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             panel2 = new Panel();
+            btDelete = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            textBox6 = new TextBox();
+            txtFindS = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
             cbxNgonNgu = new ComboBox();
@@ -78,7 +79,6 @@
             txtDiaChi = new TextBox();
             txtIDDocGia = new TextBox();
             dataGridView2 = new DataGridView();
-            btDelete = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
@@ -119,12 +119,22 @@
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
-            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(txtFindS);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(1607, 20);
             panel2.Name = "panel2";
             panel2.Size = new Size(731, 396);
             panel2.TabIndex = 3;
+            // 
+            // btDelete
+            // 
+            btDelete.Location = new Point(36, 164);
+            btDelete.Name = "btDelete";
+            btDelete.Size = new Size(657, 58);
+            btDelete.TabIndex = 3;
+            btDelete.Text = "Xóa sách";
+            btDelete.UseVisualStyleBackColor = true;
+            btDelete.Click += btDelete_Click;
             // 
             // button4
             // 
@@ -156,12 +166,12 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // textBox6
+            // txtFindS
             // 
-            textBox6.Location = new Point(36, 270);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(657, 47);
-            textBox6.TabIndex = 1;
+            txtFindS.Location = new Point(36, 270);
+            txtFindS.Name = "txtFindS";
+            txtFindS.Size = new Size(657, 47);
+            txtFindS.TabIndex = 1;
             // 
             // label1
             // 
@@ -234,6 +244,7 @@
             button1.TabIndex = 3;
             button1.Text = "Quản lý sách chi tiết";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label15
             // 
@@ -574,16 +585,6 @@
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
             // 
-            // btDelete
-            // 
-            btDelete.Location = new Point(36, 164);
-            btDelete.Name = "btDelete";
-            btDelete.Size = new Size(657, 58);
-            btDelete.TabIndex = 3;
-            btDelete.Text = "Xóa sách";
-            btDelete.UseVisualStyleBackColor = true;
-            btDelete.Click += btDelete_Click;
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -618,7 +619,7 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private TextBox textBox6;
+        private TextBox txtFindS;
         private Label label1;
         private Panel panel1;
         private Button button1;

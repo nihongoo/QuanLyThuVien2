@@ -49,7 +49,7 @@ namespace BUS.Service
         public void Update(string TaiKhoan, NguoiDung obj)
         {
             _repo.Update(TaiKhoan,obj);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

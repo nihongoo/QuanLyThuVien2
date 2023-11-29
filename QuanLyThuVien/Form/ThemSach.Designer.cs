@@ -47,15 +47,15 @@
             txtTenSach = new TextBox();
             txtIDSach = new TextBox();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
+            dgvTacGia = new DataGridView();
             panel5 = new Panel();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             panel4 = new Panel();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox6 = new TextBox();
+            txtMoTa = new TextBox();
+            txtTenTacGia = new TextBox();
+            txtIDTacGia = new TextBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -63,15 +63,15 @@
             panel3 = new Panel();
             label8 = new Label();
             tabPage3 = new TabPage();
-            dataGridView1 = new DataGridView();
+            dgvNgonNgu = new DataGridView();
             panel1 = new Panel();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtMota1 = new TextBox();
+            txtTenNgonNgu = new TextBox();
+            txtIDNgonNgu = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -79,15 +79,15 @@
             panel6 = new Panel();
             label5 = new Label();
             tabPage4 = new TabPage();
-            dataGridView3 = new DataGridView();
+            dgvTheLoai = new DataGridView();
             panel7 = new Panel();
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
             panel8 = new Panel();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox7 = new TextBox();
+            txtMoTa2 = new TextBox();
+            txtTenTheLoai = new TextBox();
+            txtIDTheLoai = new TextBox();
             label6 = new Label();
             label7 = new Label();
             label13 = new Label();
@@ -99,17 +99,17 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             panel10.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTacGia).BeginInit();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvNgonNgu).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTheLoai).BeginInit();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
@@ -294,7 +294,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(dgvTacGia);
             tabPage2.Controls.Add(panel5);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
@@ -306,15 +306,16 @@
             tabPage2.Text = "Quản lý tác giả";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvTacGia
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 264);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 102;
-            dataGridView2.RowTemplate.Height = 49;
-            dataGridView2.Size = new Size(1166, 794);
-            dataGridView2.TabIndex = 8;
+            dgvTacGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTacGia.Location = new Point(6, 264);
+            dgvTacGia.Name = "dgvTacGia";
+            dgvTacGia.RowHeadersWidth = 102;
+            dgvTacGia.RowTemplate.Height = 49;
+            dgvTacGia.Size = new Size(1166, 794);
+            dgvTacGia.TabIndex = 8;
+            dgvTacGia.CellClick += dgvTacGia_CellClick;
             // 
             // panel5
             // 
@@ -334,6 +335,7 @@
             button6.TabIndex = 0;
             button6.Text = "Xóa";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -343,6 +345,7 @@
             button5.TabIndex = 0;
             button5.Text = "Sửa";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -352,12 +355,13 @@
             button4.TabIndex = 0;
             button4.Text = "Thêm";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox10);
-            panel4.Controls.Add(textBox9);
-            panel4.Controls.Add(textBox6);
+            panel4.Controls.Add(txtMoTa);
+            panel4.Controls.Add(txtTenTacGia);
+            panel4.Controls.Add(txtIDTacGia);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(label11);
             panel4.Controls.Add(label10);
@@ -367,27 +371,27 @@
             panel4.Size = new Size(810, 456);
             panel4.TabIndex = 6;
             // 
-            // textBox10
+            // txtMoTa
             // 
-            textBox10.Location = new Point(201, 247);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(573, 184);
-            textBox10.TabIndex = 2;
+            txtMoTa.Location = new Point(201, 247);
+            txtMoTa.Multiline = true;
+            txtMoTa.Name = "txtMoTa";
+            txtMoTa.Size = new Size(573, 184);
+            txtMoTa.TabIndex = 2;
             // 
-            // textBox9
+            // txtTenTacGia
             // 
-            textBox9.Location = new Point(201, 176);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(573, 47);
-            textBox9.TabIndex = 2;
+            txtTenTacGia.Location = new Point(201, 176);
+            txtTenTacGia.Name = "txtTenTacGia";
+            txtTenTacGia.Size = new Size(573, 47);
+            txtTenTacGia.TabIndex = 2;
             // 
-            // textBox6
+            // txtIDTacGia
             // 
-            textBox6.Location = new Point(201, 99);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(573, 47);
-            textBox6.TabIndex = 2;
+            txtIDTacGia.Location = new Point(201, 99);
+            txtIDTacGia.Name = "txtIDTacGia";
+            txtIDTacGia.Size = new Size(573, 47);
+            txtIDTacGia.TabIndex = 2;
             // 
             // label12
             // 
@@ -446,7 +450,7 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(dataGridView1);
+            tabPage3.Controls.Add(dgvNgonNgu);
             tabPage3.Controls.Add(panel1);
             tabPage3.Controls.Add(panel2);
             tabPage3.Controls.Add(panel6);
@@ -457,15 +461,16 @@
             tabPage3.Text = "Quản lý ngôn ngữ";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvNgonNgu
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 275);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.RowTemplate.Height = 49;
-            dataGridView1.Size = new Size(1166, 794);
-            dataGridView1.TabIndex = 12;
+            dgvNgonNgu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNgonNgu.Location = new Point(12, 275);
+            dgvNgonNgu.Name = "dgvNgonNgu";
+            dgvNgonNgu.RowHeadersWidth = 102;
+            dgvNgonNgu.RowTemplate.Height = 49;
+            dgvNgonNgu.Size = new Size(1166, 794);
+            dgvNgonNgu.TabIndex = 12;
+            dgvNgonNgu.CellClick += dgvNgonNgu_CellClick;
             // 
             // panel1
             // 
@@ -485,6 +490,7 @@
             button1.TabIndex = 0;
             button1.Text = "Xóa";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -494,6 +500,7 @@
             button2.TabIndex = 0;
             button2.Text = "Sửa";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -503,12 +510,13 @@
             button3.TabIndex = 0;
             button3.Text = "Thêm";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(txtMota1);
+            panel2.Controls.Add(txtTenNgonNgu);
+            panel2.Controls.Add(txtIDNgonNgu);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label3);
@@ -518,27 +526,27 @@
             panel2.Size = new Size(810, 456);
             panel2.TabIndex = 10;
             // 
-            // textBox1
+            // txtMota1
             // 
-            textBox1.Location = new Point(201, 247);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(573, 184);
-            textBox1.TabIndex = 2;
+            txtMota1.Location = new Point(201, 247);
+            txtMota1.Multiline = true;
+            txtMota1.Name = "txtMota1";
+            txtMota1.Size = new Size(573, 184);
+            txtMota1.TabIndex = 2;
             // 
-            // textBox2
+            // txtTenNgonNgu
             // 
-            textBox2.Location = new Point(201, 176);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(573, 47);
-            textBox2.TabIndex = 2;
+            txtTenNgonNgu.Location = new Point(201, 176);
+            txtTenNgonNgu.Name = "txtTenNgonNgu";
+            txtTenNgonNgu.Size = new Size(573, 47);
+            txtTenNgonNgu.TabIndex = 2;
             // 
-            // textBox3
+            // txtIDNgonNgu
             // 
-            textBox3.Location = new Point(201, 99);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(573, 47);
-            textBox3.TabIndex = 2;
+            txtIDNgonNgu.Location = new Point(201, 99);
+            txtIDNgonNgu.Name = "txtIDNgonNgu";
+            txtIDNgonNgu.Size = new Size(573, 47);
+            txtIDNgonNgu.TabIndex = 2;
             // 
             // label1
             // 
@@ -597,7 +605,7 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(dataGridView3);
+            tabPage4.Controls.Add(dgvTheLoai);
             tabPage4.Controls.Add(panel7);
             tabPage4.Controls.Add(panel8);
             tabPage4.Controls.Add(panel9);
@@ -608,15 +616,16 @@
             tabPage4.Text = "Quản lý thể loại";
             tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dgvTheLoai
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(12, 275);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 102;
-            dataGridView3.RowTemplate.Height = 49;
-            dataGridView3.Size = new Size(1166, 794);
-            dataGridView3.TabIndex = 12;
+            dgvTheLoai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTheLoai.Location = new Point(12, 275);
+            dgvTheLoai.Name = "dgvTheLoai";
+            dgvTheLoai.RowHeadersWidth = 102;
+            dgvTheLoai.RowTemplate.Height = 49;
+            dgvTheLoai.Size = new Size(1166, 794);
+            dgvTheLoai.TabIndex = 12;
+            dgvTheLoai.CellClick += dgvTheLoai_CellClick;
             // 
             // panel7
             // 
@@ -636,6 +645,7 @@
             button7.TabIndex = 0;
             button7.Text = "Xóa";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -645,6 +655,7 @@
             button8.TabIndex = 0;
             button8.Text = "Sửa";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -654,12 +665,13 @@
             button9.TabIndex = 0;
             button9.Text = "Thêm";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // panel8
             // 
-            panel8.Controls.Add(textBox4);
-            panel8.Controls.Add(textBox5);
-            panel8.Controls.Add(textBox7);
+            panel8.Controls.Add(txtMoTa2);
+            panel8.Controls.Add(txtTenTheLoai);
+            panel8.Controls.Add(txtIDTheLoai);
             panel8.Controls.Add(label6);
             panel8.Controls.Add(label7);
             panel8.Controls.Add(label13);
@@ -669,27 +681,27 @@
             panel8.Size = new Size(810, 456);
             panel8.TabIndex = 10;
             // 
-            // textBox4
+            // txtMoTa2
             // 
-            textBox4.Location = new Point(201, 247);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(573, 184);
-            textBox4.TabIndex = 2;
+            txtMoTa2.Location = new Point(201, 247);
+            txtMoTa2.Multiline = true;
+            txtMoTa2.Name = "txtMoTa2";
+            txtMoTa2.Size = new Size(573, 184);
+            txtMoTa2.TabIndex = 2;
             // 
-            // textBox5
+            // txtTenTheLoai
             // 
-            textBox5.Location = new Point(201, 176);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(573, 47);
-            textBox5.TabIndex = 2;
+            txtTenTheLoai.Location = new Point(201, 176);
+            txtTenTheLoai.Name = "txtTenTheLoai";
+            txtTenTheLoai.Size = new Size(573, 47);
+            txtTenTheLoai.TabIndex = 2;
             // 
-            // textBox7
+            // txtIDTheLoai
             // 
-            textBox7.Location = new Point(201, 99);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(573, 47);
-            textBox7.TabIndex = 2;
+            txtIDTheLoai.Location = new Point(201, 99);
+            txtIDTheLoai.Name = "txtIDTheLoai";
+            txtIDTheLoai.Size = new Size(573, 47);
+            txtIDTheLoai.TabIndex = 2;
             // 
             // label6
             // 
@@ -761,21 +773,21 @@
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTacGia).EndInit();
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvNgonNgu).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTheLoai).EndInit();
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
@@ -791,15 +803,15 @@
         private TabPage tabPage2;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private DataGridView dataGridView2;
+        private DataGridView dgvTacGia;
         private Panel panel5;
         private Button button6;
         private Button button5;
         private Button button4;
         private Panel panel4;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox6;
+        private TextBox txtMoTa;
+        private TextBox txtTenTacGia;
+        private TextBox txtIDTacGia;
         private Label label12;
         private Label label11;
         private Label label10;
@@ -811,30 +823,30 @@
         private Button button10;
         private TextBox txtTenSach;
         private TextBox txtIDSach;
-        private DataGridView dataGridView1;
+        private DataGridView dgvNgonNgu;
         private Panel panel1;
         private Button button1;
         private Button button2;
         private Button button3;
         private Panel panel2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtMota1;
+        private TextBox txtTenNgonNgu;
+        private TextBox txtIDNgonNgu;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Panel panel6;
         private Label label5;
-        private DataGridView dataGridView3;
+        private DataGridView dgvTheLoai;
         private Panel panel7;
         private Button button7;
         private Button button8;
         private Button button9;
         private Panel panel8;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox7;
+        private TextBox txtMoTa2;
+        private TextBox txtTenTheLoai;
+        private TextBox txtIDTheLoai;
         private Label label6;
         private Label label7;
         private Label label13;

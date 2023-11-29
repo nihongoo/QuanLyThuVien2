@@ -9,7 +9,7 @@ namespace DAL.IRepositories
 {
     public interface ISach
     {
-        List<SachView> GetAll();
+        List<SachView> GetAll(string Search);
         public Sach Create(Sach obj);
         public void Update(int Id, Sach obj);
         public void Delete(int Id);

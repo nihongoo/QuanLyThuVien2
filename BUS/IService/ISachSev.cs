@@ -9,7 +9,7 @@ namespace BUS.IService
 {
     public interface ISachSev
     {
-        List<SachView> GetAll();
+        List<SachView> GetAll(string Search);
         public Sach Create(Sach obj);
         public void Update(int Id, Sach obj);
         public void Delete(int Id);
