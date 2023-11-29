@@ -9,7 +9,7 @@ namespace DAL.Models
 {
     public class NXB
     {
-        [Key] public int IDNXB { get; set; }
+        [Key] public int? IDNXB { get; set; }
         public string TenNXB { get; set; }
         public string? MoTa { get; set; }
 

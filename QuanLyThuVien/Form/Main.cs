@@ -66,7 +66,7 @@ namespace QuanLyThuVien
             //tab doc gia
             dataGridView2.DataSource = null;
             dataGridView2.Rows.Clear();
-            dataGridView2.ColumnCount = 8;
+            dataGridView2.ColumnCount = 7;
             dataGridView2.Columns[0].HeaderText = "ID Doc Gia";
             dataGridView2.Columns[1].HeaderText = "Ten Doc Gia";
             dataGridView2.Columns[2].HeaderText = "Dia Chi";
@@ -312,7 +312,19 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuanLySachChiTiet qlSachCT = new QuanLySachChiTiet();
+            if (string.IsNullOrEmpty(txtIDSach.Text))
+            {
+                MessageBox.Show("Hay chon 1 quyen sach de xem chi tiet");
+                return;
+            }
+            int Id = Convert.ToInt32(txtIDSach.Text);
+            string tenSach = txtTenSach.Text;
+            string tacGia = cbxTacGia.Text;
+            string ngonNgu = cbxNgonNgu.Text;
+            string theLoai = cbxTheLoai.Text;
+            string hangSach = cbxHangSach.Text;
+
+            QuanLySachChiTiet qlSachCT = new (Id, tenSach, tacGia, ngonNgu, theLoai, hangSach);
             qlSachCT.ShowDialog();
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.IRepositories
 {
-    public interface ISach
+    public interface ISachCT
     {
         List<SachView> GetAll(string Search);
         public Sach Create(Sach obj);

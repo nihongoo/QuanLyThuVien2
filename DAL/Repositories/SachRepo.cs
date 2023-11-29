@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public class SachRepo : ISach
+    public class SachRepo : ISachCT
     {
         DBContext _dBContext;
         public SachRepo()

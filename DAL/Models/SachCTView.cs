@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class SachCT
+    public class SachCTView
     {
         [Key] public int IDSachCT { get; set; }
         public int IDSach { get; set; }
@@ -16,6 +16,6 @@ namespace DAL.Models
         public int Gia { get; set; }
         public int SoLuong { get; set; }
         public string? TrangThai { get; set; }
-
+        public string? TenNXB { get; set; }
     }
 }

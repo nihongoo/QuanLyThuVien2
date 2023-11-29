@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public class TacGiarepo : ITacGia
+    public class NXBRepo : INXB
     {
         DBContext _dBContext;
-        public TacGiarepo()
+        public NXBRepo()
         {
             _dBContext = new();
         }
-        public TacGia Create(TacGia obj)
+        public NXB Create(NXB obj)
         {
-            var exobj = _dBContext.TacGia.FirstOrDefault(c => c.IDTacGia == obj.IDTacGia);
+            var exobj = _dBContext.NXB.FirstOrDefault(c => c.IDNXB == obj.IDNXB);
 
             if (exobj == null)
             {
-                _dBContext.TacGia.Add(obj);
+                _dBContext.NXB.Add(obj);
                 _dBContext.SaveChanges();
                 return obj;
             }
@@ -32,33 +32,30 @@ namespace DAL.Repositories
             }
         }
 
-
         public void Delete(int Id)
         {
-            var exobj = _dBContext.TacGia.FirstOrDefault(c => c.IDTacGia == Id);
+            var exobj = _dBContext.NXB.FirstOrDefault(c => c.IDNXB == Id);
             if (exobj != null)
             {
-                _dBContext.TacGia.Remove(exobj);
+                _dBContext.NXB.Remove(exobj);
                 _dBContext.SaveChanges();
             }
-            //throw new NotImplementedException();
         }
 
-        public List<TacGia> GetAll()
+        public List<NXB> GetAll()
         {
-            return _dBContext.TacGia.ToList();
-            throw new NotImplementedException();
+            return _dBContext.NXB.ToList();
         }
 
-        public void Update(int Id, TacGia obj)
+        public void Update(int Id, NXB obj)
         {
-            var exobj = _dBContext.TacGia.FirstOrDefault(c => c.IDTacGia == Id);
-            if(exobj != null)
+            var exobj = _dBContext.NXB.FirstOrDefault(c => c.IDNXB == Id);
+            if (exobj != null)
             {
-                exobj.TenTacGia = obj.TenTacGia;
+                exobj.TenNXB = obj.TenNXB;
                 exobj.MoTa = obj.MoTa;
             }
-            _dBContext.TacGia.Update(exobj);
+            _dBContext.NXB.Update(exobj);
             _dBContext.SaveChanges();
         }
     }

@@ -326,6 +326,7 @@ namespace QuanLyThuVien
                     TenTheLoai = txtTenTheLoai.Text,
                     MoTa = txtMoTa2.Text,
                 });
+                //MessageBox.Show("Update TheLoai completed");
                 LoadData(null);
             }
         }

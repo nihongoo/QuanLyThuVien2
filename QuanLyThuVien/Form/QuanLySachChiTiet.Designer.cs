@@ -31,35 +31,38 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             panel2 = new Panel();
+            button7 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             panel1 = new Panel();
+            cbxIDNXB = new ComboBox();
+            cbxTenNXB = new ComboBox();
+            dpkNgayXB = new DateTimePicker();
             label7 = new Label();
+            label13 = new Label();
             label4 = new Label();
             label6 = new Label();
             label5 = new Label();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
-            textBox8 = new TextBox();
-            textBox2 = new TextBox();
-            textBox7 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtSoLuong = new TextBox();
+            txtSach = new TextBox();
+            txtTrangThai = new TextBox();
+            txtGia = new TextBox();
+            txtIDSachCT = new TextBox();
+            dgvSachCT = new DataGridView();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
+            dgvNXB = new DataGridView();
             panel5 = new Panel();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             panel4 = new Panel();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox6 = new TextBox();
+            txtMoTa3 = new TextBox();
+            txtTenNXB = new TextBox();
+            txtIDNXB = new TextBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -70,9 +73,9 @@
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSachCT).BeginInit();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvNXB).BeginInit();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -92,7 +95,7 @@
             // 
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(dgvSachCT);
             tabPage1.Location = new Point(10, 58);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -103,6 +106,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
@@ -111,23 +115,35 @@
             panel2.Size = new Size(501, 381);
             panel2.TabIndex = 2;
             // 
+            // button7
+            // 
+            button7.Location = new Point(17, 197);
+            button7.Name = "button7";
+            button7.Size = new Size(458, 58);
+            button7.TabIndex = 1;
+            button7.Text = "Xóa sách chi tiết";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // button3
             // 
-            button3.Location = new Point(17, 227);
+            button3.Location = new Point(17, 283);
             button3.Name = "button3";
             button3.Size = new Size(458, 58);
             button3.TabIndex = 0;
             button3.Text = "Thoát";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(16, 126);
+            button2.Location = new Point(16, 111);
             button2.Name = "button2";
-            button2.Size = new Size(458, 58);
+            button2.Size = new Size(459, 58);
             button2.TabIndex = 0;
             button2.Text = "Sửa sách chi tiết";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -137,27 +153,54 @@
             button1.TabIndex = 0;
             button1.Text = "Thêm sách chi tiết";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
+            panel1.Controls.Add(cbxIDNXB);
+            panel1.Controls.Add(cbxTenNXB);
+            panel1.Controls.Add(dpkNgayXB);
             panel1.Controls.Add(label7);
+            panel1.Controls.Add(label13);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textBox8);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtSoLuong);
+            panel1.Controls.Add(txtSach);
+            panel1.Controls.Add(txtTrangThai);
+            panel1.Controls.Add(txtGia);
+            panel1.Controls.Add(txtIDSachCT);
             panel1.Location = new Point(7, 19);
             panel1.Name = "panel1";
             panel1.Size = new Size(1543, 381);
             panel1.TabIndex = 1;
+            // 
+            // cbxIDNXB
+            // 
+            cbxIDNXB.FormattingEnabled = true;
+            cbxIDNXB.Location = new Point(249, 301);
+            cbxIDNXB.Name = "cbxIDNXB";
+            cbxIDNXB.Size = new Size(416, 49);
+            cbxIDNXB.TabIndex = 3;
+            // 
+            // cbxTenNXB
+            // 
+            cbxTenNXB.FormattingEnabled = true;
+            cbxTenNXB.Location = new Point(1074, 295);
+            cbxTenNXB.Name = "cbxTenNXB";
+            cbxTenNXB.Size = new Size(416, 49);
+            cbxTenNXB.TabIndex = 3;
+            // 
+            // dpkNgayXB
+            // 
+            dpkNgayXB.Format = DateTimePickerFormat.Short;
+            dpkNgayXB.Location = new Point(249, 201);
+            dpkNgayXB.Name = "dpkNgayXB";
+            dpkNgayXB.Size = new Size(416, 47);
+            dpkNgayXB.TabIndex = 2;
             // 
             // label7
             // 
@@ -167,6 +210,15 @@
             label7.Size = new Size(112, 41);
             label7.TabIndex = 1;
             label7.Text = "ID NXB";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(817, 301);
+            label13.Name = "label13";
+            label13.Size = new Size(129, 41);
+            label13.TabIndex = 1;
+            label13.Text = "Tên NXB";
             // 
             // label4
             // 
@@ -222,68 +274,55 @@
             label1.TabIndex = 1;
             label1.Text = "ID sách chi tiết";
             // 
-            // textBox8
+            // txtSoLuong
             // 
-            textBox8.Location = new Point(1074, 115);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(416, 47);
-            textBox8.TabIndex = 0;
+            txtSoLuong.Location = new Point(1074, 115);
+            txtSoLuong.Name = "txtSoLuong";
+            txtSoLuong.Size = new Size(416, 47);
+            txtSoLuong.TabIndex = 0;
             // 
-            // textBox2
+            // txtSach
             // 
-            textBox2.Location = new Point(249, 115);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(416, 47);
-            textBox2.TabIndex = 0;
+            txtSach.Location = new Point(249, 115);
+            txtSach.Name = "txtSach";
+            txtSach.Size = new Size(416, 47);
+            txtSach.TabIndex = 0;
             // 
-            // textBox7
+            // txtTrangThai
             // 
-            textBox7.Location = new Point(1074, 205);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(416, 47);
-            textBox7.TabIndex = 0;
+            txtTrangThai.Location = new Point(1074, 205);
+            txtTrangThai.Name = "txtTrangThai";
+            txtTrangThai.Size = new Size(416, 47);
+            txtTrangThai.TabIndex = 0;
             // 
-            // textBox4
+            // txtGia
             // 
-            textBox4.Location = new Point(249, 205);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(416, 47);
-            textBox4.TabIndex = 0;
+            txtGia.Location = new Point(1074, 25);
+            txtGia.Name = "txtGia";
+            txtGia.Size = new Size(416, 47);
+            txtGia.TabIndex = 0;
             // 
-            // textBox3
+            // txtIDSachCT
             // 
-            textBox3.Location = new Point(249, 295);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(416, 47);
-            textBox3.TabIndex = 0;
+            txtIDSachCT.Location = new Point(249, 25);
+            txtIDSachCT.Name = "txtIDSachCT";
+            txtIDSachCT.Size = new Size(416, 47);
+            txtIDSachCT.TabIndex = 0;
             // 
-            // textBox5
+            // dgvSachCT
             // 
-            textBox5.Location = new Point(1074, 25);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(416, 47);
-            textBox5.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(249, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(416, 47);
-            textBox1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(7, 429);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.RowTemplate.Height = 49;
-            dataGridView1.Size = new Size(2065, 630);
-            dataGridView1.TabIndex = 0;
+            dgvSachCT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSachCT.Location = new Point(7, 429);
+            dgvSachCT.Name = "dgvSachCT";
+            dgvSachCT.RowHeadersWidth = 102;
+            dgvSachCT.RowTemplate.Height = 49;
+            dgvSachCT.Size = new Size(2065, 630);
+            dgvSachCT.TabIndex = 0;
+            dgvSachCT.CellClick += dgvSachCT_CellClick;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(dgvNXB);
             tabPage2.Controls.Add(panel5);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
@@ -295,15 +334,16 @@
             tabPage2.Text = "Quản lý NXB";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvNXB
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(11, 219);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 102;
-            dataGridView2.RowTemplate.Height = 49;
-            dataGridView2.Size = new Size(1166, 794);
-            dataGridView2.TabIndex = 4;
+            dgvNXB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNXB.Location = new Point(11, 219);
+            dgvNXB.Name = "dgvNXB";
+            dgvNXB.RowHeadersWidth = 102;
+            dgvNXB.RowTemplate.Height = 49;
+            dgvNXB.Size = new Size(1166, 794);
+            dgvNXB.TabIndex = 4;
+            dgvNXB.CellClick += dgvNXB_CellClick;
             // 
             // panel5
             // 
@@ -323,6 +363,7 @@
             button6.TabIndex = 0;
             button6.Text = "Xóa";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -332,6 +373,7 @@
             button5.TabIndex = 0;
             button5.Text = "Sửa";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -341,12 +383,13 @@
             button4.TabIndex = 0;
             button4.Text = "Thêm";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox10);
-            panel4.Controls.Add(textBox9);
-            panel4.Controls.Add(textBox6);
+            panel4.Controls.Add(txtMoTa3);
+            panel4.Controls.Add(txtTenNXB);
+            panel4.Controls.Add(txtIDNXB);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(label11);
             panel4.Controls.Add(label10);
@@ -356,27 +399,27 @@
             panel4.Size = new Size(810, 456);
             panel4.TabIndex = 2;
             // 
-            // textBox10
+            // txtMoTa3
             // 
-            textBox10.Location = new Point(201, 247);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(573, 184);
-            textBox10.TabIndex = 2;
+            txtMoTa3.Location = new Point(201, 247);
+            txtMoTa3.Multiline = true;
+            txtMoTa3.Name = "txtMoTa3";
+            txtMoTa3.Size = new Size(573, 184);
+            txtMoTa3.TabIndex = 2;
             // 
-            // textBox9
+            // txtTenNXB
             // 
-            textBox9.Location = new Point(201, 176);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(573, 47);
-            textBox9.TabIndex = 2;
+            txtTenNXB.Location = new Point(201, 176);
+            txtTenNXB.Name = "txtTenNXB";
+            txtTenNXB.Size = new Size(573, 47);
+            txtTenNXB.TabIndex = 2;
             // 
-            // textBox6
+            // txtIDNXB
             // 
-            textBox6.Location = new Point(201, 99);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(573, 47);
-            textBox6.TabIndex = 2;
+            txtIDNXB.Location = new Point(201, 99);
+            txtIDNXB.Name = "txtIDNXB";
+            txtIDNXB.Size = new Size(573, 47);
+            txtIDNXB.TabIndex = 2;
             // 
             // label12
             // 
@@ -441,14 +484,15 @@
             Controls.Add(tabControl1);
             Name = "QuanLySachChiTiet";
             Text = "Quản lý sách chi tiết";
+            Load += QuanLySachChiTiet_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSachCT).EndInit();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvNXB).EndInit();
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -474,28 +518,35 @@
         private Label label3;
         private Label label1;
         private TextBox textBox8;
-        private TextBox textBox2;
+        private TextBox txtSach;
         private TextBox textBox7;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox textBox5;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private TextBox txtGia;
+        private TextBox txtIDSachCT;
+        private DataGridView dgvSachCT;
         private TabPage tabPage2;
         private Label label8;
-        private DataGridView dataGridView2;
+        private DataGridView dgvNXB;
         private Panel panel5;
         private Button button6;
         private Button button5;
         private Button button4;
         private Panel panel4;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox6;
+        private TextBox txtMoTa3;
+        private TextBox txtTenNXB;
+        private TextBox txtIDNXB;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
         private Panel panel3;
+        private Button button7;
+        private DateTimePicker dpkNgayXB;
+        private Label label13;
+        private TextBox txtTrangThai;
+        private TextBox txtSoLuong;
+        private ComboBox cbxIDNXB;
+        private ComboBox cbxTenNXB;
     }
 }
