@@ -454,6 +454,7 @@
             // cbxLoaiThe
             // 
             cbxLoaiThe.FormattingEnabled = true;
+            cbxLoaiThe.Items.AddRange(new object[] { "vip", "nor" });
             cbxLoaiThe.Location = new Point(944, 118);
             cbxLoaiThe.Name = "cbxLoaiThe";
             cbxLoaiThe.Size = new Size(398, 49);

@@ -324,7 +324,7 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
             string theLoai = cbxTheLoai.Text;
             string hangSach = cbxHangSach.Text;
 
-            QuanLySachChiTiet qlSachCT = new (Id, tenSach, tacGia, ngonNgu, theLoai, hangSach);
+            QuanLySachChiTiet qlSachCT = new(Id, tenSach, tacGia, ngonNgu, theLoai, hangSach);
             qlSachCT.ShowDialog();
         }
     }

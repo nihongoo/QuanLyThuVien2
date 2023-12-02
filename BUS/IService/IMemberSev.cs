@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.IRepositories
+namespace BUS.IService
 {
-    public interface IMemBer
+    public interface IMemberSev
     {
         List<DocGia> GetAll();
         List<SachView> GetHangSach();
-        public void Update(int Id);
+        public void Update(int Id, DocGia obj);
     }
 }

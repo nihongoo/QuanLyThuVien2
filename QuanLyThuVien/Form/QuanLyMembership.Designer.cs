@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
+            txtCCCD = new TextBox();
+            dpkNgayDangKy = new DateTimePicker();
             button1 = new Button();
             button5 = new Button();
             label13 = new Label();
@@ -38,20 +42,22 @@
             label11 = new Label();
             label9 = new Label();
             label7 = new Label();
-            textBox13 = new TextBox();
-            textBox10 = new TextBox();
-            textBox12 = new TextBox();
-            textBox8 = new TextBox();
-            textBox11 = new TextBox();
-            textBox9 = new TextBox();
-            textBox7 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtSDT = new TextBox();
+            txtTenDocGia = new TextBox();
+            txtLoaiThe = new TextBox();
+            txtDiaChi = new TextBox();
+            txtIDDocGia = new TextBox();
+            dgvMember = new DataGridView();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMember).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(txtCCCD);
+            panel3.Controls.Add(dpkNgayDangKy);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(label13);
@@ -61,38 +67,73 @@
             panel3.Controls.Add(label11);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label7);
-            panel3.Controls.Add(textBox13);
-            panel3.Controls.Add(textBox10);
-            panel3.Controls.Add(textBox12);
-            panel3.Controls.Add(textBox8);
-            panel3.Controls.Add(textBox11);
-            panel3.Controls.Add(textBox9);
-            panel3.Controls.Add(textBox7);
+            panel3.Controls.Add(txtSDT);
+            panel3.Controls.Add(txtTenDocGia);
+            panel3.Controls.Add(txtLoaiThe);
+            panel3.Controls.Add(txtDiaChi);
+            panel3.Controls.Add(txtIDDocGia);
             panel3.Location = new Point(27, 11);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1456, 408);
+            panel3.Size = new Size(1456, 415);
             panel3.TabIndex = 3;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1029, 347);
+            button3.Name = "button3";
+            button3.Size = new Size(314, 58);
+            button3.TabIndex = 6;
+            button3.Text = "Thoát";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(714, 347);
+            button2.Name = "button2";
+            button2.Size = new Size(311, 58);
+            button2.TabIndex = 6;
+            button2.Text = "Danh sách hội viên";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // txtCCCD
+            // 
+            txtCCCD.Location = new Point(944, 215);
+            txtCCCD.Name = "txtCCCD";
+            txtCCCD.Size = new Size(397, 47);
+            txtCCCD.TabIndex = 5;
+            // 
+            // dpkNgayDangKy
+            // 
+            dpkNgayDangKy.Format = DateTimePickerFormat.Short;
+            dpkNgayDangKy.Location = new Point(944, 36);
+            dpkNgayDangKy.Name = "dpkNgayDangKy";
+            dpkNgayDangKy.Size = new Size(399, 47);
+            dpkNgayDangKy.TabIndex = 4;
             // 
             // button1
             // 
             button1.Location = new Point(714, 285);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(287, 72);
+            button1.Size = new Size(311, 57);
             button1.TabIndex = 2;
-            button1.Text = "In thẻ";
+            button1.Text = "Sách độc quyền";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(1056, 287);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Location = new Point(1029, 285);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(287, 72);
+            button5.Size = new Size(314, 57);
             button5.TabIndex = 2;
             button5.Text = "Xóa hội viên";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label13
             // 
@@ -164,85 +205,71 @@
             label7.TabIndex = 1;
             label7.Text = "ID độc giả";
             // 
-            // textBox13
+            // txtSDT
             // 
-            textBox13.Location = new Point(944, 207);
-            textBox13.Margin = new Padding(2, 2, 2, 2);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(397, 47);
-            textBox13.TabIndex = 0;
+            txtSDT.Location = new Point(240, 295);
+            txtSDT.Margin = new Padding(2);
+            txtSDT.Name = "txtSDT";
+            txtSDT.Size = new Size(397, 47);
+            txtSDT.TabIndex = 0;
             // 
-            // textBox10
+            // txtTenDocGia
             // 
-            textBox10.Location = new Point(240, 295);
-            textBox10.Margin = new Padding(2, 2, 2, 2);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(397, 47);
-            textBox10.TabIndex = 0;
+            txtTenDocGia.Location = new Point(240, 121);
+            txtTenDocGia.Margin = new Padding(2);
+            txtTenDocGia.Name = "txtTenDocGia";
+            txtTenDocGia.Size = new Size(397, 47);
+            txtTenDocGia.TabIndex = 0;
             // 
-            // textBox12
+            // txtLoaiThe
             // 
-            textBox12.Location = new Point(944, 33);
-            textBox12.Margin = new Padding(2, 2, 2, 2);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(397, 47);
-            textBox12.TabIndex = 0;
+            txtLoaiThe.Location = new Point(944, 121);
+            txtLoaiThe.Margin = new Padding(2);
+            txtLoaiThe.Name = "txtLoaiThe";
+            txtLoaiThe.Size = new Size(397, 47);
+            txtLoaiThe.TabIndex = 0;
             // 
-            // textBox8
+            // txtDiaChi
             // 
-            textBox8.Location = new Point(240, 121);
-            textBox8.Margin = new Padding(2, 2, 2, 2);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(397, 47);
-            textBox8.TabIndex = 0;
+            txtDiaChi.Location = new Point(240, 207);
+            txtDiaChi.Margin = new Padding(2);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(397, 47);
+            txtDiaChi.TabIndex = 0;
             // 
-            // textBox11
+            // txtIDDocGia
             // 
-            textBox11.Location = new Point(944, 121);
-            textBox11.Margin = new Padding(2, 2, 2, 2);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(397, 47);
-            textBox11.TabIndex = 0;
+            txtIDDocGia.Location = new Point(240, 33);
+            txtIDDocGia.Margin = new Padding(2);
+            txtIDDocGia.Name = "txtIDDocGia";
+            txtIDDocGia.Size = new Size(397, 47);
+            txtIDDocGia.TabIndex = 0;
             // 
-            // textBox9
+            // dgvMember
             // 
-            textBox9.Location = new Point(240, 207);
-            textBox9.Margin = new Padding(2, 2, 2, 2);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(397, 47);
-            textBox9.TabIndex = 0;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(240, 33);
-            textBox7.Margin = new Padding(2, 2, 2, 2);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(397, 47);
-            textBox7.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(27, 453);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.RowTemplate.Height = 49;
-            dataGridView1.Size = new Size(1456, 535);
-            dataGridView1.TabIndex = 4;
+            dgvMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMember.Location = new Point(27, 444);
+            dgvMember.Name = "dgvMember";
+            dgvMember.RowHeadersWidth = 102;
+            dgvMember.RowTemplate.Height = 49;
+            dgvMember.Size = new Size(1456, 544);
+            dgvMember.TabIndex = 4;
+            dgvMember.CellClick += dgvMember_CellClick;
             // 
             // QuanLyMembership
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1510, 1000);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvMember);
             Controls.Add(panel3);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "QuanLyMembership";
             Text = "QuanLyMembership";
+            Load += QuanLyMembership_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMember).EndInit();
             ResumeLayout(false);
         }
 
@@ -259,12 +286,15 @@
         private Label label9;
         private Label label7;
         private TextBox textBox13;
-        private TextBox textBox10;
-        private TextBox textBox12;
-        private TextBox textBox8;
-        private TextBox textBox11;
-        private TextBox textBox9;
-        private TextBox textBox7;
-        private DataGridView dataGridView1;
+        private TextBox txtSDT;
+        private TextBox txtTenDocGia;
+        private TextBox txtLoaiThe;
+        private TextBox txtDiaChi;
+        private TextBox txtIDDocGia;
+        private DataGridView dgvMember;
+        private DateTimePicker dpkNgayDangKy;
+        private TextBox txtCCCD;
+        private Button button3;
+        private Button button2;
     }
 }

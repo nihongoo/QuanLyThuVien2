@@ -1,6 +1,6 @@
 ﻿using DAL.Context;
+using DAL.IRepositories;
 using DAL.Models;
-using QuanLyThuVien.Form;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,25 +18,38 @@ namespace DAL.Repositories
         }
         public List<DocGia> GetAll()
         {
-            return _dBContext.DocGia.ToList();
+            return _dBContext.DocGia.Where(c => c.LoaiThe == "vip").ToList();
         }
 
         public List<SachView> GetHangSach()
         {
-            return _dBContext.SachView.ToList();
+            var query = from sach in _dBContext.Sach
+                        join TheLoai in _dBContext.TheLoaiSach
+                        on sach.IDTheLoai equals TheLoai.IDTheLoai
+                        join NgonNgu in _dBContext.NgonNgu
+                        on sach.IDNgonNgu equals NgonNgu.IDNgonNgu
+                        join tacgia in _dBContext.TacGia
+                        on sach.IDTacGia equals tacgia.IDTacGia
+                        select new SachView
+                        {
+                            IDSach = sach.IDSach,
+                            TenSach = sach.TenSach,
+                            IDTheLoai = sach.IDTheLoai,
+                            IDNgonNgu = sach.IDNgonNgu,
+                            HangSach = sach.HangSach,
+                            TenTheLoai = TheLoai.TenTheLoai,
+                            TenNgonNgu = NgonNgu.TenNgonNgu,
+                            TenTacGia = tacgia.TenTacGia
+                        };
+            return query.Where(c => c.HangSach == "VJp").ToList();
         }
 
-        public void Update(int Id, DocGia obj)
+        public void Update(int Id)
         {
             var exobj = _dBContext.DocGia.FirstOrDefault(c => c.IDDocGia == Id);
             if (exobj != null)
             {
-                exobj.DiaChi = obj.DiaChi;
-                exobj.SDT = obj.SDT;
-                exobj.Ten = obj.Ten;
-                exobj.NgayDangKy = obj.NgayDangKy;
-                exobj.LoaiThe = obj.LoaiThe;
-                exobj.CCCD = obj.CCCD;
+                exobj.LoaiThe = "nor";
             }
             _dBContext.DocGia.Update(exobj);
             _dBContext.SaveChanges();
