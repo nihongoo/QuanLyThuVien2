@@ -180,6 +180,7 @@
             // 
             // cbxIDNXB
             // 
+            cbxIDNXB.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxIDNXB.FormattingEnabled = true;
             cbxIDNXB.Location = new Point(249, 301);
             cbxIDNXB.Name = "cbxIDNXB";
@@ -188,6 +189,7 @@
             // 
             // cbxTenNXB
             // 
+            cbxTenNXB.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTenNXB.FormattingEnabled = true;
             cbxTenNXB.Location = new Point(1074, 295);
             cbxTenNXB.Name = "cbxTenNXB";
@@ -280,6 +282,7 @@
             txtSoLuong.Name = "txtSoLuong";
             txtSoLuong.Size = new Size(416, 47);
             txtSoLuong.TabIndex = 0;
+            txtSoLuong.KeyPress += txtSoLuong_KeyPress;
             // 
             // txtSach
             // 
@@ -301,9 +304,11 @@
             txtGia.Name = "txtGia";
             txtGia.Size = new Size(416, 47);
             txtGia.TabIndex = 0;
+            txtGia.KeyPress += txtGia_KeyPress;
             // 
             // txtIDSachCT
             // 
+            txtIDSachCT.Enabled = false;
             txtIDSachCT.Location = new Point(249, 25);
             txtIDSachCT.Name = "txtIDSachCT";
             txtIDSachCT.Size = new Size(416, 47);
@@ -416,6 +421,7 @@
             // 
             // txtIDNXB
             // 
+            txtIDNXB.Enabled = false;
             txtIDNXB.Location = new Point(201, 99);
             txtIDNXB.Name = "txtIDNXB";
             txtIDNXB.Size = new Size(573, 47);

@@ -34,6 +34,11 @@ namespace BUS.Service
             throw new NotImplementedException();
         }
 
+        public bool Print(DocGia obj)
+        {
+            return _repo.Print(obj);
+        }
+
         public void Update(int Id, DocGia obj)
         {
             _repo.Update(Id, obj);

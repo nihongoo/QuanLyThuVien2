@@ -9,9 +9,10 @@ namespace BUS.IService
 {
     public interface IPhieuMSev
     {
-        List<PhieuMuon> GetAll();
+        List<PhieuMView> GetAll();
         public PhieuMuon Create(PhieuMuon obj);
-        public void Update(string Id, PhieuMuon obj);
-        public void Delete(string Id);
+        public void Update(int Id, PhieuMuon obj);
+        public void Delete(int Id);
+        List<T> GetRecords<T>();
     }
 }

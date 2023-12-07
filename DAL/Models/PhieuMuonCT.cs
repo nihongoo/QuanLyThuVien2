@@ -14,6 +14,7 @@ namespace DAL.Models
         public int IDSachCT { get; set; }
         public int SoLuong { get; set; }
         public string? GhiChu { get; set; }
+        public string? mes { get; set; }
     }
 
 }

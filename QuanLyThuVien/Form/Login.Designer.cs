@@ -43,13 +43,16 @@
             txt_UserName.Name = "txt_UserName";
             txt_UserName.Size = new Size(747, 47);
             txt_UserName.TabIndex = 0;
+            txt_UserName.TextChanged += txt_UserName_TextChanged;
             // 
             // txt_Pass
             // 
             txt_Pass.Location = new Point(281, 338);
             txt_Pass.Name = "txt_Pass";
+            txt_Pass.PasswordChar = '•';
             txt_Pass.Size = new Size(747, 47);
             txt_Pass.TabIndex = 1;
+            txt_Pass.TextChanged += txt_Pass_TextChanged;
             // 
             // label1
             // 

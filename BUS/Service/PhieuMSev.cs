@@ -18,23 +18,32 @@ namespace BUS.Service
         }
         public PhieuMuon Create(PhieuMuon obj)
         {
+            return _repo.Create(obj);
             throw new NotImplementedException();
         }
 
-        public void Delete(string Id)
+        public void Delete(int Id)
         {
-            throw new NotImplementedException();
+            _repo.Delete(Id);
+            //throw new NotImplementedException();
         }
 
-        public List<PhieuMuon> GetAll()
+        public List<PhieuMView> GetAll()
         {
             return _repo.GetAll();
             throw new NotImplementedException();
         }
 
-        public void Update(string Id, PhieuMuon obj)
+        public List<T> GetRecords<T>()
         {
+            return _repo.GetRecords<T>();
             throw new NotImplementedException();
+        }
+
+        public void Update(int Id, PhieuMuon obj)
+        {
+            _repo.Update(Id, obj);
+            //throw new NotImplementedException();
         }
     }
 }

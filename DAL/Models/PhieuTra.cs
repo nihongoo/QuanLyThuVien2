@@ -12,7 +12,7 @@ namespace DAL.Models
         [Key] public int IDPhieuTra { get; set; }
         public DateTime NgayMuon { get; set; }
         public DateTime NgayTra { get; set; }
-        public int IDocGia { get; set; }
+        public int IDDocGia { get; set; }
         public int IDNhanVien { get; set; }
         public string GhiChu { get; set; }
     }

@@ -324,8 +324,47 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
             string theLoai = cbxTheLoai.Text;
             string hangSach = cbxHangSach.Text;
 
-            QuanLySachChiTiet qlSachCT = new (Id, tenSach, tacGia, ngonNgu, theLoai, hangSach);
+            QuanLySachChiTiet qlSachCT = new(Id, tenSach, tacGia, ngonNgu, theLoai, hangSach);
             qlSachCT.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)//in the
+        {
+            if (string.IsNullOrEmpty(txtTenDocGia.Text) ||
+                string.IsNullOrEmpty(txtIDDocGia.Text) ||
+                string.IsNullOrEmpty(txtDiaChi.Text) ||
+                string.IsNullOrEmpty(txtSDT.Text) ||
+                string.IsNullOrEmpty(dpkNgayDangKy.Text) ||
+                string.IsNullOrEmpty(txtCCCD.Text) ||
+                string.IsNullOrEmpty(cbxLoaiThe.Text))
+            {
+                MessageBox.Show("Khong duoc de trong thong tin");
+                return;
+            }
+            var confirm = MessageBox.Show("xac nhan thuc hien chuc nang", "xac nhan", MessageBoxButtons.OKCancel);
+            if (confirm == DialogResult.OK)
+            {
+
+                var cre = _DocGiaSev.Print(new DocGia()
+                {
+                    IDDocGia = Convert.ToInt32(txtIDDocGia.Text),
+                    Ten = txtTenDocGia.Text,
+                    DiaChi = txtDiaChi.Text,
+                    SDT = txtSDT.Text,
+                    NgayDangKy = dpkNgayDangKy.Value,
+                    LoaiThe = cbxLoaiThe.Text,
+                    CCCD = txtCCCD.Text,
+                });
+                if (cre)
+                {
+                    MessageBox.Show("In Thanh Cong");
+                }
+                else
+                {
+                    MessageBox.Show("In That Bai");
+                }
+                LoadData(null, null);
+            }
         }
     }
 }

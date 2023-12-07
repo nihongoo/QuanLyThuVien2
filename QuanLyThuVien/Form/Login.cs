@@ -53,5 +53,15 @@ namespace QuanLyThuVien
 
 
         }
+
+        private void txt_UserName_TextChanged(object sender, EventArgs e)
+        {
+            txt_UserName.Text = txt_UserName.Text.Trim();
+        }
+
+        private void txt_Pass_TextChanged(object sender, EventArgs e)
+        {
+            txt_Pass.Text = txt_Pass.Text.Trim();
+        }
     }
 }

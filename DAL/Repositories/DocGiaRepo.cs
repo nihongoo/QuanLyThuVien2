@@ -1,4 +1,5 @@
-﻿using DAL.Context;
+﻿using Azure;
+using DAL.Context;
 using DAL.IRepositories;
 using DAL.Models;
 using System;
@@ -54,6 +55,33 @@ namespace DAL.Repositories
                 return _dBContext.DocGia.ToList();
             }
             throw new NotImplementedException();
+        }
+
+        public bool Print(DocGia obj)
+        {
+            string filePath = "E:\\xi sap 3\\QLTV\\QuanLyThuVien\\Print.txt";
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Ghi thông tin của thẻ vào file
+                    writer.WriteLine("------Thong tin the doc gia--------");
+                    writer.WriteLine($"IDDocGia: {obj.IDDocGia}");
+                    writer.WriteLine($"TenDocGia: {obj.Ten}");
+                    writer.WriteLine($"DiaChi: {obj.DiaChi}");
+                    writer.WriteLine($"SoDienThoai: {obj.SDT}");
+                    writer.WriteLine($"NgayDangKy: {obj.NgayDangKy}");
+                    writer.WriteLine($"LoaiThe: {obj.LoaiThe}");
+                    writer.WriteLine($"CCCD: {obj.CCCD}");
+                    writer.WriteLine("-----------------------------------");
+                    writer.WriteLine("");
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void Update(int Id, DocGia obj)

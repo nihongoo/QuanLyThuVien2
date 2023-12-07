@@ -28,6 +28,7 @@ namespace DAL.Context
         public virtual DbSet<PhieuMuonCT> PhieuMuonCT { get; set; }
         public virtual DbSet<PhieuTra> PhieuTra { get; set; }
         public virtual DbSet<PhieuTraCT> PhieuTraCT { get; set; }
+        public virtual DbSet<QuanLyMuonSach> QuanLyMuonSach { get; set; }
         public virtual DbSet<Sach> Sach { get; set; }
         public virtual DbSet<SachView> SachView { get; set; }
         public virtual DbSet<SachCT> SachCT { get; set; }
@@ -41,5 +42,11 @@ namespace DAL.Context
         {
             throw new NotImplementedException();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<QuanLyMuonSach>()
+                .HasKey(q => new { q.IDDocGia, q.IDSachCT });
+        }
+
     }
 }
