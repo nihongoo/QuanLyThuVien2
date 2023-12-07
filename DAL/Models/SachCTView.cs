@@ -17,5 +17,6 @@ namespace DAL.Models
         public int SoLuong { get; set; }
         public string? TrangThai { get; set; }
         public string? TenNXB { get; set; }
+        public string? TenSach { get; set; }
     }
 }

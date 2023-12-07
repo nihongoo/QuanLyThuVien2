@@ -13,5 +13,6 @@ namespace DAL.IRepositories
         public DocGia Create(DocGia obj);
         public void Update(int Id, DocGia obj);
         public void Delete(int Id);
+        public bool Print(DocGia obj);
     }
 }

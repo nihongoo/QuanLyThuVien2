@@ -13,5 +13,7 @@ namespace BUS.IService
         public DocGia Create(DocGia obj);
         public void Update(int Id, DocGia obj);
         public void Delete(int obj);
+        public bool Print(DocGia obj);
+
     }
 }

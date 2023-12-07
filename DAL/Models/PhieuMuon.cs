@@ -16,7 +16,7 @@ namespace DAL.Models
         public int IDNhanVien { get; set; }
         public string GhiChu { get; set; }
         //atri join
-        public string? TenDocGia { get; set; }
-        public string? TenNV { get; set; }
+        //public string? TenDocGia { get; set; }
+        //public string? TenNV { get; set; }
     }
 }

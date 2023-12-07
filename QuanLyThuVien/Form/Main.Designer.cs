@@ -476,6 +476,7 @@
             button5.TabIndex = 2;
             button5.Text = "In thẻ";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label13
             // 
