@@ -65,7 +65,7 @@ namespace DAL.Repositories
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     // Ghi thông tin của thẻ vào file
-                    writer.WriteLine("-----------------------------------");
+                    writer.WriteLine("------Thong tin the doc gia--------");
                     writer.WriteLine($"IDDocGia: {obj.IDDocGia}");
                     writer.WriteLine($"TenDocGia: {obj.Ten}");
                     writer.WriteLine($"DiaChi: {obj.DiaChi}");
