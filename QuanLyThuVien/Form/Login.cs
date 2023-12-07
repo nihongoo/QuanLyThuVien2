@@ -63,5 +63,10 @@ namespace QuanLyThuVien
         {
             txt_Pass.Text = txt_Pass.Text.Trim();
         }
+
+        private void bt_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

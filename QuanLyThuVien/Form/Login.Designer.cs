@@ -90,6 +90,7 @@
             bt_Cancel.TabIndex = 3;
             bt_Cancel.Text = "Thoát";
             bt_Cancel.UseVisualStyleBackColor = true;
+            bt_Cancel.Click += bt_Cancel_Click;
             // 
             // bt_Login
             // 
