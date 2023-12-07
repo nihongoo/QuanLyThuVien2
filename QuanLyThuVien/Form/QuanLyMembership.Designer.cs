@@ -223,6 +223,7 @@
             // 
             // txtLoaiThe
             // 
+            txtLoaiThe.Enabled = false;
             txtLoaiThe.Location = new Point(944, 121);
             txtLoaiThe.Margin = new Padding(2);
             txtLoaiThe.Name = "txtLoaiThe";
@@ -239,6 +240,7 @@
             // 
             // txtIDDocGia
             // 
+            txtIDDocGia.Enabled = false;
             txtIDDocGia.Location = new Point(240, 33);
             txtIDDocGia.Margin = new Padding(2);
             txtIDDocGia.Name = "txtIDDocGia";

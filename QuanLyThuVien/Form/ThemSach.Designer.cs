@@ -173,6 +173,7 @@
             // 
             // cbxHangSach
             // 
+            cbxHangSach.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxHangSach.FormattingEnabled = true;
             cbxHangSach.Items.AddRange(new object[] { "nor", "Vjp" });
             cbxHangSach.Location = new Point(1410, 177);
@@ -182,6 +183,7 @@
             // 
             // cbxTacGia
             // 
+            cbxTacGia.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTacGia.FormattingEnabled = true;
             cbxTacGia.Location = new Point(1410, 109);
             cbxTacGia.Name = "cbxTacGia";
@@ -190,6 +192,7 @@
             // 
             // cbxNgonNgu
             // 
+            cbxNgonNgu.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxNgonNgu.FormattingEnabled = true;
             cbxNgonNgu.Location = new Point(1410, 28);
             cbxNgonNgu.Name = "cbxNgonNgu";
@@ -198,6 +201,7 @@
             // 
             // cbxTheLoai
             // 
+            cbxTheLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTheLoai.FormattingEnabled = true;
             cbxTheLoai.Location = new Point(358, 177);
             cbxTheLoai.Name = "cbxTheLoai";
@@ -287,6 +291,7 @@
             // 
             // txtIDSach
             // 
+            txtIDSach.Enabled = false;
             txtIDSach.Location = new Point(358, 31);
             txtIDSach.Name = "txtIDSach";
             txtIDSach.Size = new Size(582, 47);
@@ -388,6 +393,7 @@
             // 
             // txtIDTacGia
             // 
+            txtIDTacGia.Enabled = false;
             txtIDTacGia.Location = new Point(201, 99);
             txtIDTacGia.Name = "txtIDTacGia";
             txtIDTacGia.Size = new Size(573, 47);
@@ -543,6 +549,7 @@
             // 
             // txtIDNgonNgu
             // 
+            txtIDNgonNgu.Enabled = false;
             txtIDNgonNgu.Location = new Point(201, 99);
             txtIDNgonNgu.Name = "txtIDNgonNgu";
             txtIDNgonNgu.Size = new Size(573, 47);
@@ -698,6 +705,7 @@
             // 
             // txtIDTheLoai
             // 
+            txtIDTheLoai.Enabled = false;
             txtIDTheLoai.Location = new Point(201, 99);
             txtIDTheLoai.Name = "txtIDTheLoai";
             txtIDTheLoai.Size = new Size(573, 47);

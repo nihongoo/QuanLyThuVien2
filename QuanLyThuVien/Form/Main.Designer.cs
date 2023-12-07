@@ -204,6 +204,7 @@
             // 
             // cbxNgonNgu
             // 
+            cbxNgonNgu.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxNgonNgu.FormattingEnabled = true;
             cbxNgonNgu.Location = new Point(1065, 18);
             cbxNgonNgu.Name = "cbxNgonNgu";
@@ -212,6 +213,7 @@
             // 
             // cbxTheLoai
             // 
+            cbxTheLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTheLoai.FormattingEnabled = true;
             cbxTheLoai.Location = new Point(258, 208);
             cbxTheLoai.Name = "cbxTheLoai";
@@ -220,6 +222,7 @@
             // 
             // cbxHangSach
             // 
+            cbxHangSach.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxHangSach.FormattingEnabled = true;
             cbxHangSach.Items.AddRange(new object[] { "nor", "VJp" });
             cbxHangSach.Location = new Point(1065, 204);
@@ -229,6 +232,7 @@
             // 
             // cbxTacGia
             // 
+            cbxTacGia.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTacGia.FormattingEnabled = true;
             cbxTacGia.Items.AddRange(new object[] { "Thường", "VJp" });
             cbxTacGia.Location = new Point(1065, 111);
@@ -309,6 +313,7 @@
             // 
             // txtIDSach
             // 
+            txtIDSach.Enabled = false;
             txtIDSach.Location = new Point(258, 25);
             txtIDSach.Name = "txtIDSach";
             txtIDSach.Size = new Size(375, 47);
@@ -364,13 +369,13 @@
             // 
             // cbxLoc
             // 
+            cbxLoc.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxLoc.FormattingEnabled = true;
             cbxLoc.Items.AddRange(new object[] { "Tên", "ID" });
             cbxLoc.Location = new Point(419, 75);
             cbxLoc.Name = "cbxLoc";
             cbxLoc.Size = new Size(401, 49);
             cbxLoc.TabIndex = 2;
-            cbxLoc.Text = "Tên/ID";
             // 
             // txtFind
             // 
@@ -453,6 +458,7 @@
             // 
             // cbxLoaiThe
             // 
+            cbxLoaiThe.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxLoaiThe.FormattingEnabled = true;
             cbxLoaiThe.Items.AddRange(new object[] { "vip", "nor" });
             cbxLoaiThe.Location = new Point(944, 118);
@@ -571,6 +577,7 @@
             // 
             // txtIDDocGia
             // 
+            txtIDDocGia.Enabled = false;
             txtIDDocGia.Location = new Point(240, 32);
             txtIDDocGia.Name = "txtIDDocGia";
             txtIDDocGia.Size = new Size(398, 47);

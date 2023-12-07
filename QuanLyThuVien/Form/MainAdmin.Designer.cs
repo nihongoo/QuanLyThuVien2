@@ -238,13 +238,13 @@
             // 
             // cbxLoc2
             // 
+            cbxLoc2.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxLoc2.FormattingEnabled = true;
             cbxLoc2.Items.AddRange(new object[] { "Tên", "Quyền" });
             cbxLoc2.Location = new Point(3, 425);
             cbxLoc2.Name = "cbxLoc2";
             cbxLoc2.Size = new Size(652, 49);
             cbxLoc2.TabIndex = 2;
-            cbxLoc2.Text = "Tên/Quyền";
             // 
             // button24
             // 
@@ -339,9 +339,11 @@
             txtSdt.Name = "txtSdt";
             txtSdt.Size = new Size(460, 47);
             txtSdt.TabIndex = 1;
+            txtSdt.KeyPress += txtSdt_KeyPress;
             // 
             // cbxQuyen
             // 
+            cbxQuyen.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxQuyen.FormattingEnabled = true;
             cbxQuyen.Items.AddRange(new object[] { "admin", "bdh", "user" });
             cbxQuyen.Location = new Point(1156, 456);
@@ -371,6 +373,7 @@
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(575, 47);
             txtPass.TabIndex = 1;
+            txtPass.TextChanged += txtPass_TextChanged;
             // 
             // label34
             // 
@@ -403,6 +406,7 @@
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(575, 47);
             txtUser.TabIndex = 1;
+            txtUser.TextChanged += txtUser_TextChanged;
             // 
             // label30
             // 

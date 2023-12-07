@@ -171,7 +171,7 @@ namespace QuanLyThuVien
                 }
                 LoadData(txtFind2.Text, cbxLoc2.Text);
             }
-            else if(cbxLoc2.Text == "Quyền")
+            else if (cbxLoc2.Text == "Quyền")
             {
                 if (string.IsNullOrEmpty(txtFind2.Text))
                 {
@@ -186,6 +186,24 @@ namespace QuanLyThuVien
                 MessageBox.Show("vui long chon truong loc thong tin");
                 cbxLoc2.Focus();
             }
+        }
+
+        private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            txtUser.Text = txtUser.Text.Trim();
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.Text = txtPass.Text.Trim();
         }
     }
 }

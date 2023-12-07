@@ -75,6 +75,7 @@
             // 
             // cbxIDSachCT
             // 
+            cbxIDSachCT.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxIDSachCT.FormattingEnabled = true;
             cbxIDSachCT.Location = new Point(269, 242);
             cbxIDSachCT.Name = "cbxIDSachCT";
@@ -83,6 +84,7 @@
             // 
             // cbxPhieuM
             // 
+            cbxPhieuM.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPhieuM.FormattingEnabled = true;
             cbxPhieuM.Location = new Point(269, 139);
             cbxPhieuM.Name = "cbxPhieuM";
@@ -135,6 +137,7 @@
             // 
             // txtIDPMCT
             // 
+            txtIDPMCT.Enabled = false;
             txtIDPMCT.Location = new Point(269, 25);
             txtIDPMCT.Name = "txtIDPMCT";
             txtIDPMCT.Size = new Size(437, 47);
