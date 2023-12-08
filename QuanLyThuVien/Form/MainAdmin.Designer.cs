@@ -35,7 +35,6 @@
             label31 = new Label();
             cbxLoc2 = new ComboBox();
             button24 = new Button();
-            button23 = new Button();
             txtFind2 = new TextBox();
             button22 = new Button();
             button21 = new Button();
@@ -85,7 +84,7 @@
             textBox8 = new TextBox();
             textBox11 = new TextBox();
             textBox9 = new TextBox();
-            textBox7 = new TextBox();
+            txtID = new TextBox();
             dataGridView2 = new DataGridView();
             tabPage3 = new TabPage();
             panel2 = new Panel();
@@ -147,7 +146,6 @@
             textBox24 = new TextBox();
             textBox25 = new TextBox();
             textBox26 = new TextBox();
-            tabPage6 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
@@ -179,7 +177,6 @@
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -217,7 +214,6 @@
             panel11.Controls.Add(label31);
             panel11.Controls.Add(cbxLoc2);
             panel11.Controls.Add(button24);
-            panel11.Controls.Add(button23);
             panel11.Controls.Add(txtFind2);
             panel11.Controls.Add(button22);
             panel11.Controls.Add(button21);
@@ -255,15 +251,6 @@
             button24.Text = "Tìm";
             button24.UseVisualStyleBackColor = true;
             button24.Click += button24_Click;
-            // 
-            // button23
-            // 
-            button23.Location = new Point(3, 244);
-            button23.Name = "button23";
-            button23.Size = new Size(652, 58);
-            button23.TabIndex = 0;
-            button23.Text = "Đổi mật khẩu";
-            button23.UseVisualStyleBackColor = true;
             // 
             // txtFind2
             // 
@@ -602,7 +589,7 @@
             panel3.Controls.Add(textBox8);
             panel3.Controls.Add(textBox11);
             panel3.Controls.Add(textBox9);
-            panel3.Controls.Add(textBox7);
+            panel3.Controls.Add(txtID);
             panel3.Location = new Point(12, 11);
             panel3.Name = "panel3";
             panel3.Size = new Size(1455, 407);
@@ -722,12 +709,12 @@
             textBox9.Size = new Size(398, 47);
             textBox9.TabIndex = 0;
             // 
-            // textBox7
+            // txtID
             // 
-            textBox7.Location = new Point(240, 32);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(398, 47);
-            textBox7.TabIndex = 0;
+            txtID.Location = new Point(240, 32);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(398, 47);
+            txtID.TabIndex = 0;
             // 
             // dataGridView2
             // 
@@ -1293,15 +1280,6 @@
             textBox26.Size = new Size(468, 47);
             textBox26.TabIndex = 0;
             // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(10, 58);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(2358, 1235);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "Thống kê quá hạn";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
             // MainAdmin
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -1354,7 +1332,6 @@
         private TabPage tabPage3;
         private TabPage tabPage4;
         private TabPage tabPage5;
-        private TabPage tabPage6;
         private Panel panel4;
         private Label label14;
         private ComboBox comboBox1;
@@ -1380,7 +1357,7 @@
         private TextBox textBox8;
         private TextBox textBox11;
         private TextBox textBox9;
-        private TextBox textBox7;
+        private TextBox txtID;
         private DataGridView dataGridView2;
         private Panel panel2;
         private Button button4;
@@ -1449,7 +1426,6 @@
         private Label label31;
         private ComboBox cbxLoc2;
         private Button button24;
-        private Button button23;
         private TextBox txtFind2;
         private Button button22;
         private Button button21;
