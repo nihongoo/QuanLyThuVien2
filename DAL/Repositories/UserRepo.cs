@@ -47,14 +47,10 @@ namespace DAL.Repositories
         public void Update(string TaiKhoan, NguoiDung obj)
         {
             var exobj = _dBContext.NguoiDung.FirstOrDefault(c => c.TaiKhoan == TaiKhoan);
-
-            if (obj != null)
-            {
-
-            }
             if (exobj != null)
             {
                 exobj.Ten = obj.Ten;
+                exobj.MatKhau = obj.MatKhau;
                 exobj.DiaChi = obj.DiaChi;
                 exobj.SDT = obj.SDT;
                 exobj.NgaySinh = obj.NgaySinh;

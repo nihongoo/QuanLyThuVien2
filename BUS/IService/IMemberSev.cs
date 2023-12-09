@@ -11,6 +11,6 @@ namespace BUS.IService
     {
         List<DocGia> GetAll();
         List<SachView> GetHangSach();
-        public void Update(int Id, DocGia obj);
+        public void Update(int Id);
     }
 }

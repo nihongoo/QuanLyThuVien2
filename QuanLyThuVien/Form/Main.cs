@@ -259,6 +259,7 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind.Focus();
+                    LoadData(null, null);
                 }
                 LoadData(txtFind.Text, cbxLoc.Text);
             }
@@ -268,6 +269,7 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind.Focus();
+                    LoadData(null, null);
                 }
                 //dataGridView2.Rows.Clear();
                 LoadData(txtFind.Text, cbxLoc.Text);

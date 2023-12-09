@@ -1,1 +1,10 @@
+------Thong tin the doc gia--------
+IDDocGia: 3
+TenDocGia: doc gia 2
+DiaChi: dia chi 1
+SoDienThoai: 0123456789
+NgayDangKy: 11/11/2022 12:00:00 AM
+LoaiThe: vip
+CCCD: ggwp
+-----------------------------------
 

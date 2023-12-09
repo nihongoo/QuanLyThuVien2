@@ -21,9 +21,9 @@ namespace DAL.Repositories
         {
             try
             {
-                var idnxbExists = _dBContext.SachCT.Any(sct => sct.IDNXB == obj.IDNXB);
+                var exitobj = _dBContext.SachCT.FirstOrDefault(sct => sct.IDSachCT == obj.IDSachCT);
 
-                if (idnxbExists)
+                if (exitobj != null)
                 {
                     return null;
                 }

@@ -196,6 +196,7 @@ namespace QuanLyThuVien
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind2.Focus();
+                    LoadData1(null,null);
                 }
                 LoadData(txtFind2.Text, cbxLoc2.Text);
             }
@@ -205,6 +206,7 @@ namespace QuanLyThuVien
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind2.Focus();
+                    LoadData1(null, null);
                 }
                 LoadData(txtFind2.Text, cbxLoc2.Text);
             }
@@ -438,6 +440,7 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind.Focus();
+                    LoadData1(null, null);
                 }
                 LoadData1(txtFind.Text, cbxLoc.Text);
             }
@@ -447,6 +450,7 @@ string.IsNullOrEmpty(cbxLoaiThe.Text))
                 {
                     MessageBox.Show("vui long nhap thong tin can tim");
                     txtFind.Focus();
+                    LoadData1(null, null);
                 }
                 //dataGridView2.Rows.Clear();
                 LoadData1(txtFind.Text, cbxLoc.Text);

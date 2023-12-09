@@ -29,14 +29,9 @@ namespace BUS.Service
             throw new NotImplementedException();
         }
 
-        public void Update(int Id, DocGia obj)
+        public void Update(int Id)
         {
             _repo.Update(Id);
-        }
-
-        public void Update(int idCell)
-        {
-            throw new NotImplementedException();
         }
     }
 }
